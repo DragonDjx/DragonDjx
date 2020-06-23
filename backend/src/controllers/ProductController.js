@@ -9,6 +9,22 @@ module.exports = {
         return response.json(products);
     },
 
+    async newProduct(request, response) {
+        const { title, value, stock, sold } = request.body;
+
+        const id = crypto.randomBytes(4).toString('HEX');
+
+        await connection('products').insert({
+            id,
+            title,
+            value,
+            stock,
+            sold
+        });
+
+        return response.json({ id });
+    },
+
     async productInfo(request, response) {
         const { id } = request.body;
 
@@ -19,19 +35,11 @@ module.exports = {
 
         return response.json(info)
     },
-    
-    async newProduct(request, response) {
-        const { title, value, stock } = request.body;
 
-        const id = crypto.randomBytes(4).toString('HEX');
+    async bestSellers(request, response) {
+        const products = await connection('products')
+        .orderBy('sold', 'desc')
 
-        await connection('products').insert({
-            id,
-            title,
-            value,
-            stock
-        });
-
-        return response.json({ id });
+        return response.json(products)
     }
 };
