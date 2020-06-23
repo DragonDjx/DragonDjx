@@ -10,7 +10,7 @@ module.exports = {
     },
 
     async newProduct(request, response) {
-        const { title, value, stock, sold } = request.body;
+        const { title, value, stock, sold, image } = request.body;
 
         const id = crypto.randomBytes(4).toString('HEX');
 
@@ -19,7 +19,8 @@ module.exports = {
             title,
             value,
             stock,
-            sold
+            sold,
+            image
         });
 
         return response.json({ id });
@@ -39,6 +40,7 @@ module.exports = {
     async bestSellers(request, response) {
         const products = await connection('products')
         .orderBy('sold', 'desc')
+        .limit(4)
 
         return response.json(products)
     }

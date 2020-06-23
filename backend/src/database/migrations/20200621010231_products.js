@@ -7,6 +7,8 @@ exports.up = function(knex) {
         
         table.integer('stock').defaultTo(0);
         table.integer('sold').defaultTo(0);
+
+        table.string('image');
     });
 };
 
