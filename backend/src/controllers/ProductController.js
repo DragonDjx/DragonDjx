@@ -40,7 +40,7 @@ module.exports = {
     async bestSellers(request, response) {
         const products = await connection('products')
         .orderBy('sold', 'desc')
-        .limit(4)
+        .limit(5)
 
         return response.json(products)
     }
