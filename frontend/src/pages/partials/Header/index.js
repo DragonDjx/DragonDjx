@@ -12,7 +12,7 @@ export default function Header() {
 
     return (
         <header>
-            <a href="/">
+            <a href="/" className="home-button">
                 <img src={logo} alt="DragonDjx" />
                 DragonDjx
             </a>

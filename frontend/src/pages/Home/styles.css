@@ -1,16 +1,5 @@
 .home-page {
-    height: 768px;
-
-    background-image: url('../../assets/background.jpg');
-    background-attachment: fixed;
-    background-position: center top;
-    background-repeat: no-repeat;
-
-    position: relative;
-    padding: 190px 0;
-}
-
-.content {
+    height: 100%;
     width: 95%;
     max-width: 1024px;
     padding: 0 20px;
@@ -20,14 +9,14 @@
     justify-content: center;
 }
 
-.content ul{
+.home-page ul{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 10px 0;
     list-style: none;
 }
 
-.content ul li {
+.home-page ul li {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,7 +30,7 @@
     transition: 0.2s;
 }
 
-.content ul li img {
+.home-page ul li img {
     margin: 0 auto;
 
     width: 120px;
@@ -52,7 +41,7 @@
     cursor: pointer;
 }
 
-.content ul li h4 {
+.home-page ul li h4 {
     height: 42px;
     margin-bottom: 20px;
 
@@ -67,7 +56,7 @@
     cursor: pointer;
 }
 
-.content ul li p.value {
+.home-page ul li p.value {
     color: #bd33fd;
 
     text-align: left;
@@ -75,7 +64,7 @@
     font-size: 16px;
 }
 
-.content ul li p.parceled {
+.home-page ul li p.parceled {
     color: #5271ff;
 
     text-align: left;
@@ -83,17 +72,17 @@
     font-size: 12px;
 }
 
-.content ul li .buttons {
+.home-page ul li .buttons {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.content ul li .buttons button + button {
+.home-page ul li .buttons button + button {
     margin-left: 4px;
 }
 
-.content ul li button {
+.home-page ul li button {
     background-color: #bd33fd;
     color: whitesmoke;
     border-color: #ccc;
@@ -111,6 +100,6 @@
     justify-content: center;
 }
 
-.content ul li:hover {
+.home-page ul li:hover {
     transform: scale(1.1);
 }

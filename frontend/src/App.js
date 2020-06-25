@@ -4,9 +4,14 @@ import './global.css';
 
 import Routes from './routes';
 
+import Header from './pages/partials/Header';
+
 function App() {
   return (
-    <Routes />
+    <div>
+      <Header />
+      <Routes />
+    </div>
   );
 }
 

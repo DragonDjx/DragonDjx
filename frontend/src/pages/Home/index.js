@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaShoppingCart, FaPlus } from 'react-icons/fa';
 
-import Header from '../partials/Header';
-
 import api from '../../services/api';
 import './styles.css';
 
@@ -17,36 +15,32 @@ export default function Home() {
 
     return (
         <div className="home-page">
-            <Header />
+            <ul>
+                {products.map(product => (
+                    <li key={product.id}>
+                        <img src={product.image.url} alt="Imagem" />
 
-            <div className="content">
-                <ul>
-                    {products.map(product => (
-                        <li key={product.id}>
-                            <img src={product.image.url} alt="Imagem" />
+                        <h4>{product.title}</h4>
 
-                            <h4>{product.title}</h4>
+                        <p className="value">{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.price)} à vista</p>
 
-                            <p className="value">{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.price)} à vista</p>
+                        <p className="parceled">
+                            12x de {Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.parceled / 12)} sem juros</p>
 
-                            <p className="parceled">
-                                12x de {Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.parceled/12)} sem juros</p>
-
-                            <div className="buttons">
-                                <button>
-                                    <FaPlus size={10} color="#08acf8" />
+                        <div className="buttons">
+                            <button>
+                                <FaPlus size={10} color="#08acf8" />
                                     Detalhes
                                 </button>
 
-                                <button>
-                                    <FaShoppingCart size={10} color="#08acf8" />
+                            <button>
+                                <FaShoppingCart size={10} color="#08acf8" />
                                     Comprar
                                 </button>
-                            </div>
-                        </li>
-                    ))}
-                </ul>
-            </div>
+                        </div>
+                    </li>
+                ))}
+            </ul>
         </div>
     )
 };
