@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaAngleDown, FaSearch, FaUser, FaShoppingCart, FaPlus } from 'react-icons/fa';
+import { FaShoppingCart, FaPlus } from 'react-icons/fa';
 
 import Header from '../partials/Header';
 
@@ -23,13 +23,14 @@ export default function Home() {
                 <ul>
                     {products.map(product => (
                         <li key={product.id}>
-                            <img src={product.image} alt="Imagem" />
+                            <img src={product.image.url} alt="Imagem" />
 
                             <h4>{product.title}</h4>
 
-                            <p className="value">{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.value)} à vista</p>
+                            <p className="value">{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.price)} à vista</p>
 
-                            <p className="parceled">12x de R$ 24,90 sem juros</p>
+                            <p className="parceled">
+                                12x de {Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.parceled/12)} sem juros</p>
 
                             <div className="buttons">
                                 <button>
