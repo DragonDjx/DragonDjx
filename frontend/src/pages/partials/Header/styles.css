@@ -8,9 +8,6 @@ header {
     position: fixed;
     border-width: 0 0 1px;
 
-    padding: 0 8px;
-    margin: 0 auto;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,7 +25,7 @@ header .home-button {
     display: flex;
     align-items: center;
 
-    font-size: 30px;
+    font-size: 28px;
     font-family: 'Ubuntu', sans-serif;
     padding: 0 10px;
 
@@ -36,10 +33,10 @@ header .home-button {
 }
 
 header .home-button img {
-    height: 36px;
-    width: 48px;
+    height: 32px;
+    width: 42px;
 
-    margin-right: 14px;
+    margin-right: 8px;
 }
 
 header .home-button:hover {
@@ -52,7 +49,8 @@ header .menu,
 header .user,
 header .cart {
     height: 100%;
-    width: 130px;
+    width: 100%;
+    max-width: 140px;
 
     cursor: pointer;
 
@@ -143,32 +141,37 @@ header .cart ul li {
     padding-left: 24px;
 }
 
-header .user ul li {
-    justify-content: unset;
-}
-
 header .user:hover ul {
     min-width: 130px;
+
+    float: unset;
 }
 
 header .cart:hover ul {
     min-width: 360px;
 }
 
+header .user ul li {
+    justify-content: unset;
+}
+
 header form {
+    height: 100%;
+    width: 100%;
+    max-width: 400px;
+
     display: flex;
     align-items: center;
 
-    padding: 0 20px;
+    padding: 0 10px;
 }
 
 header form input {
     background-color: #fff;
     color: #555;
 
-    height: 36px;
-    width: auto;
-    min-width: 300px;
+    height: 32px;
+    width: 100%;
 
     padding: 6px 12px;
 
@@ -181,13 +184,16 @@ header form input {
 header form button {
     background-color: #fff;
 
-    height: 36px;
-    width: 36px;
-
-    padding: 6px 12px;
+    height: 32px;
+    width: 32px;
 
     border: 1px solid #ccc;
     border-radius: 0 4px 4px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
 }
 
 header form button svg {
