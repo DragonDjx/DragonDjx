@@ -41,7 +41,7 @@ export default function Header() {
 
             <form action="#">
                 <input type="text" placeholder="Pesquisar Produto" />
-                <button type="submit"><FaSearch size={12} color="#333" /></button>
+                <button type="submit"><FaSearch size={12} color="#000" /></button>
             </form>
 
             <div className="user" onMouseOut={hideContent}>

@@ -26,12 +26,18 @@ body {
     background-repeat: no-repeat;
 
     position: relative;
-    padding: 190px 0;
 }
 
-html, body, #root {
-    height: 100%;
+html, body, #root, #content {
+    height: max-content;
+    min-height: 100%;
     width: 100%;
+    max-width: 1920px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 ul {

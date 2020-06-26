@@ -1,15 +1,22 @@
 .home-page {
-    height: 100%;
-    width: 95%;
-    max-width: 1024px;
-    padding: 0 20px;
-    margin: 60px auto;
+    background: #d2d2d2;
+
+    height: max-content;
+    min-height: 100%;
+    width: 100%;
+    max-width: 1920px;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
+
+    padding: 100px 10%;
+    margin: auto;
 }
 
 .home-page ul{
+    margin: auto;
+
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 10px 0;
@@ -17,6 +24,9 @@
 }
 
 .home-page ul li {
+    height: max-content;
+    width: min-content;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,14 +37,16 @@
     border-radius: 4px;
     border: 1px solid #ddd;
 
+    margin: 0 auto;
+
     transition: 0.2s;
 }
 
 .home-page ul li img {
     margin: 0 auto;
 
-    width: 120px;
     height: 120px;
+    width: 120px;
 
     padding: 4px;
 

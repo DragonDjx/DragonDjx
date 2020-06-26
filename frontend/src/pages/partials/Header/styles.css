@@ -1,16 +1,18 @@
 header {
-    background: #222;
-    border-color: #080808;
+    background: #222222cd;
+    border-color: #08080808;
 
     height: 60px;
     width: 100%;
+    max-width: 1920px;
     top: 0;
     position: fixed;
-    border-width: 0 0 1px;
+
+    margin: 0 auto;
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 header svg {
@@ -27,16 +29,15 @@ header .home-button {
 
     font-size: 28px;
     font-family: 'Ubuntu', sans-serif;
-    padding: 0 10px;
 
-    transition: 0.1s;
+    transition: 0.2s;
 }
 
 header .home-button img {
     height: 32px;
     width: 42px;
 
-    margin-right: 8px;
+    margin: 0 8px;
 }
 
 header .home-button:hover {
@@ -50,7 +51,7 @@ header .user,
 header .cart {
     height: 100%;
     width: 100%;
-    max-width: 140px;
+    max-width: 120px;
 
     cursor: pointer;
 
@@ -102,12 +103,12 @@ header .cart ul {
 header .menu:hover ul,
 header .user:hover ul,
 header .cart:hover ul {
-    background: #f0f0f5;
+    background: transparent;
 
     display: grid;
     grid-template-columns: 1;
 
-    min-width: 200px;
+    width: 200px;
 
     text-align: right;
     float: right;
@@ -131,6 +132,8 @@ header .cart ul li + li {
 header .menu ul li,
 header .user ul li,
 header .cart ul li {
+    background: #f0f0f5cd;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -139,55 +142,64 @@ header .cart ul li {
     font-weight: 500;
 
     padding-left: 24px;
+
+    transition: 0.2s;
 }
 
 header .user:hover ul {
-    min-width: 130px;
+    width: 120px;
 
     float: unset;
 }
 
 header .cart:hover ul {
-    min-width: 360px;
+    width: 360px;
 }
 
 header .user ul li {
     justify-content: unset;
 }
 
+header .menu ul li:hover,
+header .user ul li:hover,
+header .cart ul li:hover {
+    background: #ffffffcd;
+}
+
 header form {
     height: 100%;
     width: 100%;
-    max-width: 400px;
+    max-width: 360px;
 
     display: flex;
     align-items: center;
-
-    padding: 0 10px;
+    justify-content: center;
 }
 
 header form input {
-    background-color: #fff;
-    color: #555;
+    background-color: #ffffffcd;
+    color: #000;
 
     height: 32px;
     width: 100%;
 
     padding: 6px 12px;
 
-    border: 1px solid #ccc;
+    border: 1px solid #000;
+    border-right: 0;
     border-radius: 4px 0 0 4px;
 
     font-family: inherit;
 }
 
 header form button {
-    background-color: #fff;
+    background-color: #ffffffcd;
 
     height: 32px;
     width: 32px;
 
-    border: 1px solid #ccc;
+    border: 1px solid #000;
+    border-left: 0;
     border-radius: 0 4px 4px 0;
 
     display: flex;

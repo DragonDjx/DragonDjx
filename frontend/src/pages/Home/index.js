@@ -30,13 +30,13 @@ export default function Home() {
                         <div className="buttons">
                             <button>
                                 <FaPlus size={10} color="#08acf8" />
-                                    Detalhes
-                                </button>
+                                        Detalhes
+                                    </button>
 
                             <button>
                                 <FaShoppingCart size={10} color="#08acf8" />
-                                    Comprar
-                                </button>
+                                        Comprar
+                                    </button>
                         </div>
                     </li>
                 ))}
