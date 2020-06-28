@@ -13,12 +13,24 @@ export default function Home() {
         })
     });
 
+    function handleClick(e) {
+        e.preventDefault();
+    }
+
+    function addToCart(product) {
+        const cart = JSON.parse(localStorage.getItem('cart'));
+
+        cart.push(product);
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
     return (
         <div className="home-page">
             <ul>
                 {products.map(product => (
                     <li key={product.id}>
-                        <img src={product.image.url} alt="Imagem" />
+                        <img src={product.image.url} alt="Produto" />
 
                         <h4>{product.title}</h4>
 
@@ -30,13 +42,13 @@ export default function Home() {
                         <div className="buttons">
                             <button>
                                 <FaPlus size={10} color="#08acf8" />
-                                        Detalhes
-                                    </button>
+                                Detalhes
+                            </button>
 
-                            <button>
+                            <button onClick={(e) => {handleClick(e);addToCart(product);}}>
                                 <FaShoppingCart size={10} color="#08acf8" />
-                                        Comprar
-                                    </button>
+                                Comprar
+                            </button>
                         </div>
                     </li>
                 ))}

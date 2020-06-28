@@ -1,24 +1,71 @@
-import React from 'react';
-import { FaAngleDown, FaSearch, FaUser, FaUserPlus, FaUserLock, FaShoppingCart, FaArrowAltCircleRight } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { FaAngleDown, FaSearch, FaUser, FaUserPlus, FaUserLock, FaShoppingCart, FaArrowAltCircleRight, FaTrash } from 'react-icons/fa';
 
 import './styles.css';
 
 import logo from '../../../assets/logo.png';
 
 export default function Header() {
-    function hideContent(e) {
-        e.preventDefault()
+    const history = useHistory();
+    const [cart, setCart] = useState([]);
+
+    if (localStorage.getItem('cart') == null) localStorage.setItem('cart', "[]");
+
+    function getCart(e) {
+        e.preventDefault();
+
+        setCart(JSON.parse(localStorage.getItem('cart')));
     }
+
+    function listCart() {
+        if (cart != null && cart != "") {return cart.map(product => (
+            <li key={product.id}>
+                <img src={product.image.url} alt="Produto"/>
+
+                <h4 className="title">{product.title}</h4>
+
+                <p className="value">{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.price)}</p>
+                
+                <FaTrash size={14} onClick={e => {e.preventDefault(); removeProduct(product.id);}}/>
+            </li>
+        ))} else {
+            return (
+                <li id="emptyCart">
+                    <h4>Seu Carrinho Está Vazio</h4>
+                </li>
+            )
+        };
+    };
+
+    function removeProduct(id) {
+        setCart(cart.filter(product => product.id !== id));
+        localStorage.removeItem('cart');
+        localStorage.setItem('cart', JSON.parse(cart));
+
+    };
+
+    function handleMouseOut(e) {
+        e.preventDefault();
+    };
+
+    function handleClick(e) {
+        e.preventDefault();
+
+        const id = e.target.id;
+
+        history.push(`/${ id }`);
+    };
 
     return (
         <header>
-            <a href="/" className="home-button">
+            <a href="/" className="home-button"  onClick={ handleClick }>
                 <img src={logo} alt="DragonDjx" />
                 DragonDjx
             </a>
 
-            <div className="menu" onMouseOut={hideContent}>
-                <p>
+            <div className="menu" onMouseOut={ handleMouseOut }>
+                <p id="produtos" onClick={ handleClick }>
                     Categorias
                     <FaAngleDown size={20} />
                 </p>
@@ -44,32 +91,32 @@ export default function Header() {
                 <button type="submit"><FaSearch size={12} color="#000" /></button>
             </form>
 
-            <div className="user" onMouseOut={hideContent}>
+            <div className="user" onMouseOut={ handleMouseOut }>
                 <p>
                     <FaUser size={14} />
                     Minha Conta
                 </p>
 
                 <ul>
-                    <li>
+                    <li id="register" onClick={ handleClick }>
                         <FaUserPlus size={12} color="333"/>
                         Registrar
                     </li>
-                    <li>
+                    <li id="login" onClick={ handleClick }>
                         <FaUserLock size={12} color="333"/>
                         Entrar
                     </li>
                 </ul>
             </div>
 
-            <div className="cart" onMouseOut={hideContent}>
-                <p>
+            <div className="cart" onMouseOut={ handleMouseOut }>
+                <p id="cart" onClick={ handleClick }  onMouseOver={getCart}>
                     <FaShoppingCart size={14} />
                     Carrinho
                 </p>
 
                 <ul>
-                    <li>TESTE</li>
+                    {listCart()}
                 </ul>
             </div>
         </header>

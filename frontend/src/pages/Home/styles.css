@@ -1,5 +1,5 @@
 .home-page {
-    background: #d2d2d2;
+    background: #d2d2d2d2;
 
     height: max-content;
     min-height: 100%;
@@ -63,6 +63,11 @@
     font-size: 12px;
     font-weight: 500;
     line-height: 15px;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: clip;
     overflow: hidden;
 
     cursor: pointer;
