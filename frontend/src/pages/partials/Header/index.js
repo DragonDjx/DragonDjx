@@ -19,7 +19,7 @@ export default function Header() {
     }
 
     function listCart() {
-        if (cart != null && cart != "") {return cart.map(product => (
+        if (cart != null && cart.length !== 0) {return cart.map(product => (
             <li key={product.id}>
                 <img src={product.image.url} alt="Produto"/>
 
