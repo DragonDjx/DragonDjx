@@ -1,27 +1,27 @@
 // FADE IN FUNÇÃO
 var $target = $('.anime'),
-	animationClass = 'anime-start';
-	offset = $(window).height() * 3/4
+    animationClass = 'anime-start';
+offset = $(window).height() * 3 / 4
 
-function animeScroll(){
-	var documentTop = $(document).scrollTop();
-	
-	$target.each(function() {
-		var itemTop = $(this).offset().top
+function animeScroll() {
+    var documentTop = $(document).scrollTop();
 
-		if(documentTop > itemTop - offset) {
-			$(this).addClass(animationClass);
-		}
-		else {
-			$(this).removeClass(animationClass);
-		}
-	})
-}	
+    $target.each(function () {
+        var itemTop = $(this).offset().top
+
+        if (documentTop > itemTop - offset) {
+            $(this).addClass(animationClass);
+        }
+        else {
+            $(this).removeClass(animationClass);
+        }
+    })
+}
 
 animeScroll()
 
-$(document).scroll(function() {
-	animeScroll();
+$(document).scroll(function () {
+    animeScroll();
 })
 
 // Quando o usuário passar o mouse nas linhas de computador
@@ -37,10 +37,10 @@ linhaHome.onmouseover = () => {
 linhaHome.onmouseout = e => {
     e.preventDefault()
 
-    setTimeout(() =>{
+    setTimeout(() => {
         btnHome.style.display = 'none'
     }, 2000)
-   
+
 }
 
 const linhaGamer = document.querySelector('.linha-gamer')
@@ -54,10 +54,10 @@ linhaGamer.onmouseover = () => {
 linhaGamer.onmouseout = e => {
     e.preventDefault()
 
-    setTimeout(() =>{
+    setTimeout(() => {
         btnGamer.style.display = 'none'
     }, 2000)
-   
+
 }
 const linhaMonte = document.querySelector('.linha-monte')
 const btnMonte = document.querySelector('.btn-linha-monte')
@@ -70,8 +70,36 @@ linhaMonte.onmouseover = () => {
 linhaMonte.onmouseout = e => {
     e.preventDefault()
 
-    setTimeout(() =>{
+    setTimeout(() => {
         btnMonte.style.display = 'none'
     }, 2000)
-   
+
+}
+
+const section1 = document.querySelector('div.section1')
+const section2 = document.querySelector('div.section2')
+
+function before() {
+    section2.className = 'row section2'
+    section2.style.display = 'none'
+
+    section1.style.display = 'inline-block'
+}
+
+function previous() {
+    section1.className = 'row section 1'
+    section1.style.display = 'none'
+    section2.style.display = 'inline-block'
+}
+
+
+function changeImage(imageID) {
+    const mainImg = document.querySelector('#myimage')
+    
+    const image = document.querySelector(`#${imageID}`)
+    const imageSrc = image.getAttribute('src')
+
+    mainImg.src = imageSrc
+
+    return mainImg;
 }

@@ -143,6 +143,11 @@ div.thumbnail {
     height: 500px;
 }
 
+button.btn-slide:focus {
+    color: rgb(189, 51, 253);
+    border: 2px solid rgb(189, 51, 253) !important;
+}
+
 button.btn-comprar {
     background-color: rgb(189, 51, 253);
     color: whitesmoke;
