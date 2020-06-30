@@ -1,22 +1,19 @@
 .home-page {
     background: #d2d2d2d2;
 
-    height: max-content;
-    min-height: 100%;
+    height: auto;
+    min-height: 1000px;
     width: 100%;
     max-width: 1920px;
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
 
-    padding: 100px 10%;
-    margin: auto;
+    padding: 60px 10%;
 }
 
 .home-page ul{
-    margin: auto;
-
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 10px 0;
@@ -26,7 +23,7 @@
 .home-page ul li {
     height: max-content;
     width: min-content;
-    
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -119,4 +116,123 @@
 
 .home-page ul li:hover {
     transform: scale(1.1);
+}
+
+.home-page .pc-build {
+    height: auto;
+    width: 100%;
+    max-width: 1920px;
+
+    text-align: center;
+}
+
+.home-page .pc-build h2 {
+    font-weight: 500;
+    font-size: 28px;
+
+    padding-bottom: 28px;
+}
+
+.home-page .pc-build ul {
+    min-height: 360px;
+    
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.home-page .pc-build ul li {
+    width: 100%;
+
+    padding: 8px 0 0;
+
+    border: 0;
+}
+
+.home-page .pc-build ul li img {
+    height: 225px;
+    width: 225px;
+}
+
+.home-page .pc-build ul li h3 {
+    width: 100%;
+
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.1;
+    color: whitesmoke;
+
+    padding: 8px 0;
+}
+
+.home-page .pc-build ul li h3.home {
+    background: #cb6ce6;
+}
+
+.home-page .pc-build ul li h3.gamer {
+    background: #5271ff;
+}
+
+.home-page .pc-build ul li h3.monte {
+    background: #000a3b;
+}
+
+.home-page .pc-build ul li p {
+    display: none;
+
+    color: whitesmoke;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    z-index: 200;
+}
+
+.home-page .pc-build ul li p.home {
+    background: rgb(189, 51, 253);
+}
+
+.home-page .pc-build ul li p.gamer {
+    background: rgb(8, 172, 248);
+}
+
+.home-page .pc-build ul li p.monte {
+    background: rgb(20, 20, 20);
+}
+
+
+.home-page .pc-build ul li:hover {
+    transform: unset;
+}
+
+.home-page .pc-build ul li:hover p {
+    display: block;
+
+    overflow: hidden;
+
+    animation-name: fade-down;
+    animation-duration: 0.2s;
+}
+
+.home-page .best-sellers {
+    height: auto;
+    width: 100%;
+    max-width: 1920px;
+
+    text-align: left;
+}
+
+.home-page .best-sellers h2 {
+    font-weight: 400;
+    font-size: 24px;
+
+    padding-bottom: 28px;
+}
+
+@keyframes fade-down {
+    from {
+        height: 0;
+    }
+    to {
+        height: 48px;
+    }
 }

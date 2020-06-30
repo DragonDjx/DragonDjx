@@ -76,7 +76,7 @@ export default function Header() {
                     <FaAngleDown size={20} />
                 </p>
 
-                <ul>
+                <ul className="fade">
                     <li>
                         TESTE 1
                         <FaArrowAltCircleRight size={12} color="333"/>
@@ -108,7 +108,7 @@ export default function Header() {
                     Minha Conta
                 </p>
 
-                <ul>
+                <ul className="fade">
                     <li id="register" onClick={ handleClick }>
                         <FaUserPlus size={12} color="333"/>
                         Registrar
@@ -126,7 +126,7 @@ export default function Header() {
                     Carrinho
                 </p>
 
-                <ul>
+                <ul className="fade">
                     {listCart()}
                 </ul>
             </div>

@@ -35,9 +35,8 @@ header .home-button {
 
 header .home-button img {
     height: 32px;
-    width: 42px;
 
-    margin-right: 4px;
+    margin-right: 8px;
 }
 
 header .home-button:hover {
@@ -96,8 +95,6 @@ header .cart ul {
     display: none;
 
     overflow: hidden;
-
-    transition: height 2s ease;
 }
 
 header .menu:hover ul,
@@ -119,8 +116,6 @@ header .cart:hover ul {
 
     border-radius: 4px;
     border: 1px solid #ddd;
-
-    animation-duration: 2s;
 }
 
 header .menu ul li + li,
@@ -273,4 +268,20 @@ header form button {
 
 header form button svg {
     margin: 0;
+}
+
+.fade {
+    overflow: hidden;
+
+    animation-name: fade;
+    animation-duration: 0.2s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
