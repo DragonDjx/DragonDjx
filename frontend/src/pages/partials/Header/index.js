@@ -4,11 +4,12 @@ import { FaAngleDown, FaSearch, FaUser, FaUserPlus, FaUserLock, FaShoppingCart, 
 
 import './styles.css';
 
-import logo from '../../../assets/logo.png';
+import logo from '../../../assets/logo.svg';
 
 export default function Header() {
     const history = useHistory();
     const [cart, setCart] = useState([]);
+    const [search, setSearch] = useState([]);
 
     if (localStorage.getItem('cart') == null) localStorage.setItem('cart', "[]");
 
@@ -42,8 +43,13 @@ export default function Header() {
         setCart(cart.filter(product => product.id !== id));
         localStorage.removeItem('cart');
         localStorage.setItem('cart', JSON.parse(cart));
-
     };
+
+    function handleSearch(e) {
+        e.preventDefault();
+
+        history.push(`/result?search=${search}`);
+    }
 
     function handleMouseOut(e) {
         e.preventDefault();
@@ -86,8 +92,13 @@ export default function Header() {
                 </ul>
             </div>
 
-            <form action="#">
-                <input type="text" placeholder="Pesquisar Produto" />
+            <form action="/result" onSubmit={handleSearch}>
+                <input
+                    type="text"
+                    placeholder="Pesquisar Produto"
+                    value={search}
+                    onChange={e => setSearch(e.target.value)}
+                />
                 <button type="submit"><FaSearch size={12} color="#000" /></button>
             </form>
 
