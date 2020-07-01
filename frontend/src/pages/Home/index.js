@@ -55,34 +55,34 @@ export default function Home() {
 
             <div className="best-sellers">
                 <h2>PRODUTOS MAIS VENDIDOS</h2>
+
+                <ul className="product-list">
+                    {bestSellers.map(product => (
+                        <li key={product.id}>
+                            <img src={product.image.url} alt="Produto" />
+
+                            <h4>{product.title}</h4>
+
+                            <p className="value">{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.price)} à vista</p>
+
+                            <p className="parceled">
+                                12x de {Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.parceled / 12)} sem juros</p>
+
+                            <div className="buttons">
+                                <button>
+                                    <FaPlus size={10} color="#08acf8" />
+                                    Detalhes
+                                </button>
+
+                                <button onClick={(e) => {handleClick(e);addToCart(product);}}>
+                                    <FaShoppingCart size={10} color="#08acf8" />
+                                    Comprar
+                                </button>
+                            </div>
+                        </li>
+                    ))}
+                </ul>
             </div>
-
-            <ul className="product-list">
-                {bestSellers.map(product => (
-                    <li key={product.id}>
-                        <img src={product.image.url} alt="Produto" />
-
-                        <h4>{product.title}</h4>
-
-                        <p className="value">{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.price)} à vista</p>
-
-                        <p className="parceled">
-                            12x de {Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.parceled / 12)} sem juros</p>
-
-                        <div className="buttons">
-                            <button>
-                                <FaPlus size={10} color="#08acf8" />
-                                Detalhes
-                            </button>
-
-                            <button onClick={(e) => {handleClick(e);addToCart(product);}}>
-                                <FaShoppingCart size={10} color="#08acf8" />
-                                Comprar
-                            </button>
-                        </div>
-                    </li>
-                ))}
-            </ul>
         </div>
     )
 };
