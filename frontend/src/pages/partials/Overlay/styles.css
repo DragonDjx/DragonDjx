@@ -1,0 +1,52 @@
+.overlay,
+.overlay .row {
+    width: 100%;
+    height: 100%;
+}
+
+.overlay {
+    border-bottom: 20px solid rgba(0,0,0,0.3);
+
+    height: 240px;
+    margin-top: 60px;
+}
+
+.overlay .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay .row h2,
+.overlay .row p {
+    color: white;
+
+    padding: 10px 0;
+
+    font-weight: 400;
+}
+
+.overlay .row h2 {
+    font-size: 32px;
+}
+
+.overlay .row p {
+    font-size: 24px;
+}
+
+.anime {
+    animation-name: fade-in;
+    animation-duration: 0.7s;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translate3d(-500px, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
