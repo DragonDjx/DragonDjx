@@ -55,11 +55,36 @@ section.content-site {
     margin-bottom: 50px;
 }
 
-.slider-class {
+.slider-class{
     padding: 5px;
 }
-.slider {
-    margin-left: -60px;
+
+.slider-class:hover{
+    border: 1px solid gray;
+}
+
+
+.img-zoom-container {
+    position: relative;
+}
+  
+.img-zoom-lens {
+    position: absolute;
+    /*set the size of the lens:*/
+    width: 120px;
+    height: 120px;
+}
+  
+.img-zoom-result {
+    display:none;
+    border: 1px solid #d4d4d4;
+    /*set the size of the result div:*/
+    width: 200px;
+    height: 200px;
+}
+  
+.img-zoom-container:hover .img-zoom-result {
+    display: block;
 }
 
 h4.titulo {
