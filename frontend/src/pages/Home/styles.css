@@ -208,7 +208,7 @@
     display: block;
 }
 
-.home-page .best-sellers {
+.best-sellers {
     height: auto;
     width: 100%;
     max-width: 1920px;
@@ -216,7 +216,7 @@
     text-align: left;
 }
 
-.home-page .best-sellers h2 {
+.best-sellers h2 {
     font-weight: 400;
     font-size: 24px;
 
