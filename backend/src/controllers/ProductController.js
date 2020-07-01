@@ -50,9 +50,11 @@ module.exports = {
     },
 
     async bestSellers(request, response) {
+        const { limit = 4 } = request.query;
+
         const products = await connection('products')
         .orderBy('sold', 'desc')
-        .limit(5);
+        .limit(limit);
 
         for (product of products) {
             product.image = await connection('images')
