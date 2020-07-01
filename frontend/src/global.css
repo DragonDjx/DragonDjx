@@ -104,6 +104,22 @@ svg {
     }
 }
 
+.fade-out {
+    overflow: hidden;
+
+    animation-name: fade-out;
+    animation-duration: 0.2s;
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
 .fade-down {
     overflow: hidden;
 

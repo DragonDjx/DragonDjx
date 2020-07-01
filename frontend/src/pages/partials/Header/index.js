@@ -13,15 +13,13 @@ export default function Header() {
 
     if (localStorage.getItem('cart') == null) localStorage.setItem('cart', "[]");
 
-    function getCart(e) {
-        e.preventDefault();
-
+    function getCart() {
         setCart(JSON.parse(localStorage.getItem('cart')));
     }
 
     function listCart() {
         if (cart != null && cart.length !== 0) {return cart.map(product => (
-            <li key={product.id}>
+            <li key={product.id} id={product.id}>
                 <img src={product.image.url} alt="Produto"/>
 
                 <h4 className="title">{product.title}</h4>
@@ -40,9 +38,15 @@ export default function Header() {
     };
 
     function removeProduct(id) {
-        setCart(cart.filter(product => product.id !== id));
-        localStorage.removeItem('cart');
-        localStorage.setItem('cart', JSON.parse(cart));
+        const item = document.getElementById(id);
+        item.classList.add("fade-out");
+
+        setTimeout(function() {
+            const newCart = cart.filter(product => product.id !== id);
+
+            localStorage.setItem('cart', JSON.stringify(newCart));
+            setCart(newCart);
+        }, 200);
     };
 
     function handleSearch(e) {
