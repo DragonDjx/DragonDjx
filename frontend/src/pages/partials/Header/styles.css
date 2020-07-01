@@ -91,8 +91,8 @@ header {
     right: 0;
     left: auto;
 
-    border-radius: 4px;
-    border: 1px solid #ddd;
+    /* border-radius: 4px;
+    border: 1px solid #ddd; */
 }
 
 .header-list ul li + li {
@@ -100,7 +100,7 @@ header {
 }
 
 .header-list ul li {
-    background: #f0f0f5cd;
+    background: #f0f0f5f5;
 
     display: flex;
     align-items: center;
@@ -112,10 +112,13 @@ header {
     padding-left: 24px;
 
     transition: 0.2s;
+
+    border-radius: 4px;
+    border: 1px solid #ddd;
 }
 
 .header-list ul li:hover {
-    background: #ffffffcd;
+    background: #fffffff5;
 }
 
 #menu p svg {
@@ -137,6 +140,8 @@ header {
     text-align: left;
 
     width: 360px;
+
+    border-color: transparent;
 }
 
 #cart ul li {

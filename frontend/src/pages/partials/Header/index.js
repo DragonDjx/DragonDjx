@@ -64,7 +64,13 @@ export default function Header() {
 
         const id = e.target.id;
 
-        history.push(`/${ id }`);
+        if (id === "home-button") {
+            history.push('/');
+        }
+        else {
+            history.push(`/${ id }`);
+        }
+
     };
 
     return (
