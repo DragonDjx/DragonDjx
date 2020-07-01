@@ -13,14 +13,14 @@
     padding: 60px 10%;
 }
 
-.home-page ul{
+.product-list {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 10px 0;
     list-style: none;
 }
 
-.home-page ul li {
+.product-list li {
     height: max-content;
     width: min-content;
 
@@ -39,7 +39,7 @@
     transition: 0.2s;
 }
 
-.home-page ul li img {
+.product-list li img {
     margin: 0 auto;
 
     height: 120px;
@@ -50,7 +50,7 @@
     cursor: pointer;
 }
 
-.home-page ul li h4 {
+.product-list li h4 {
     height: 42px;
     margin-bottom: 20px;
 
@@ -70,7 +70,7 @@
     cursor: pointer;
 }
 
-.home-page ul li p.value {
+.product-list li p.value {
     color: #bd33fd;
 
     text-align: left;
@@ -78,7 +78,7 @@
     font-size: 16px;
 }
 
-.home-page ul li p.parceled {
+.product-list li p.parceled {
     color: #5271ff;
 
     text-align: left;
@@ -86,17 +86,17 @@
     font-size: 12px;
 }
 
-.home-page ul li .buttons {
+.product-list li .buttons {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.home-page ul li .buttons button + button {
+.product-list li .buttons button + button {
     margin-left: 4px;
 }
 
-.home-page ul li button {
+.product-list li button {
     background-color: #bd33fd;
     color: whitesmoke;
     border-color: #ccc;
@@ -114,11 +114,11 @@
     justify-content: center;
 }
 
-.home-page ul li:hover {
+.product-list li:hover {
     transform: scale(1.1);
 }
 
-.home-page .pc-build {
+.pc-build {
     height: auto;
     width: 100%;
     max-width: 1920px;
@@ -126,21 +126,21 @@
     text-align: center;
 }
 
-.home-page .pc-build h2 {
+.pc-build h2 {
     font-weight: 500;
     font-size: 28px;
 
     padding-bottom: 28px;
 }
 
-.home-page .pc-build ul {
+.pc-build ul {
     min-height: 360px;
     
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
 }
 
-.home-page .pc-build ul li {
+.pc-build ul li {
     width: 100%;
 
     padding: 8px 0 0;
@@ -148,12 +148,12 @@
     border: 0;
 }
 
-.home-page .pc-build ul li img {
+.pc-build ul li img {
     height: 225px;
     width: 225px;
 }
 
-.home-page .pc-build ul li h3 {
+.pc-build ul li h3 {
     width: 100%;
 
     font-size: 24px;
@@ -164,19 +164,19 @@
     padding: 8px 0;
 }
 
-.home-page .pc-build ul li h3.home {
+.pc-build ul li h3.home {
     background: #cb6ce6;
 }
 
-.home-page .pc-build ul li h3.gamer {
+.pc-build ul li h3.gamer {
     background: #5271ff;
 }
 
-.home-page .pc-build ul li h3.monte {
+.pc-build ul li h3.monte {
     background: #000a3b;
 }
 
-.home-page .pc-build ul li p {
+.pc-build ul li p {
     display: none;
 
     color: whitesmoke;
@@ -187,30 +187,25 @@
     z-index: 200;
 }
 
-.home-page .pc-build ul li p.home {
+.pc-build ul li p.home {
     background: rgb(189, 51, 253);
 }
 
-.home-page .pc-build ul li p.gamer {
+.pc-build ul li p.gamer {
     background: rgb(8, 172, 248);
 }
 
-.home-page .pc-build ul li p.monte {
+.pc-build ul li p.monte {
     background: rgb(20, 20, 20);
 }
 
 
-.home-page .pc-build ul li:hover {
+.pc-build ul li:hover {
     transform: unset;
 }
 
-.home-page .pc-build ul li:hover p {
+.pc-build ul li:hover p {
     display: block;
-
-    overflow: hidden;
-
-    animation-name: fade-down;
-    animation-duration: 0.2s;
 }
 
 .home-page .best-sellers {
@@ -226,13 +221,4 @@
     font-size: 24px;
 
     padding-bottom: 28px;
-}
-
-@keyframes fade-down {
-    from {
-        height: 0;
-    }
-    to {
-        height: 48px;
-    }
 }

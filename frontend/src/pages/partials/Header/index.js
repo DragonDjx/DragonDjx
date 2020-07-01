@@ -65,12 +65,12 @@ export default function Header() {
 
     return (
         <header>
-            <a href="/" className="home-button"  onClick={ handleClick }>
+            <a href="/" id="home-button"  onClick={ handleClick }>
                 <img src={logo} alt="DragonDjx" />
                 DragonDjx
             </a>
 
-            <div className="menu" onMouseOut={ handleMouseOut }>
+            <div id="menu" className="header-list" onMouseOut={ handleMouseOut }>
                 <p id="produtos" onClick={ handleClick }>
                     Categorias
                     <FaAngleDown size={20} />
@@ -92,7 +92,7 @@ export default function Header() {
                 </ul>
             </div>
 
-            <form action="/result" onSubmit={handleSearch}>
+            <form id="search" action="/result" onSubmit={handleSearch}>
                 <input
                     type="text"
                     placeholder="Pesquisar Produto"
@@ -102,7 +102,7 @@ export default function Header() {
                 <button type="submit"><FaSearch size={12} color="#000" /></button>
             </form>
 
-            <div className="user" onMouseOut={ handleMouseOut }>
+            <div id="user" className="header-list" onMouseOut={ handleMouseOut }>
                 <p>
                     <FaUser size={14} />
                     Minha Conta
@@ -120,7 +120,7 @@ export default function Header() {
                 </ul>
             </div>
 
-            <div className="cart" onMouseOut={ handleMouseOut }>
+            <div id="cart" className="header-list" onMouseOut={ handleMouseOut }>
                 <p id="cart" onClick={ handleClick }  onMouseOver={getCart}>
                     <FaShoppingCart size={14} />
                     Carrinho
