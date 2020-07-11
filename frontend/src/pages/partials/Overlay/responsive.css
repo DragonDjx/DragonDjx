@@ -1,0 +1,44 @@
+@media screen and (max-width: 800px ) {
+    .overlay {
+        margin-top: 52px;
+        padding: 48px 0;
+    }
+
+    .overlay h2 {
+        font-size: 28px;
+    }
+
+    .overlay p {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 760px ) {
+    .overlay {
+        margin-top: 48px;
+        padding: 36px 0;
+    }
+
+    .overlay h2 {
+        font-size: 24px;
+    }
+
+    .overlay p {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 498px ) {
+    .overlay {
+        margin-top: 40px;
+        padding: 28px 0;
+    }
+
+    .overlay h2 {
+        font-size: 16px;
+    }
+
+    .overlay p {
+        font-size: 14px;
+    }
+}

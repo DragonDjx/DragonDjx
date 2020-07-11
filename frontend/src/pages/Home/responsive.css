@@ -1,0 +1,93 @@
+@media screen and (max-width: 800px ) {
+    .home-page {
+        padding-top: 40px;
+    }
+
+    .pc-build h2,
+    .best-sellers h2 {
+        font-size: 26px;
+    }
+
+    .pc-build .build-list {
+        grid-template-columns: repeat(2, 240px);
+    }
+}
+
+@media screen and (max-width: 760px ) {
+    .home-page {
+        padding-top: 36px;
+    }
+
+    .pc-build h2,
+    .best-sellers h2 {
+        font-size: 24px;
+    }
+
+    .pc-build .build-list {
+        grid-auto-rows: 235px;
+    }
+
+    .pc-build .build-list li img {
+        height: 180px;
+        width: 180px;
+    }
+}
+
+@media screen and (max-width: 498px ) {
+    .home-page {
+        padding-top: 28px;
+    }
+
+    .pc-build h2,
+    .best-sellers h2 {
+        font-size: 22px;
+    }
+
+    .pc-build .build-list {
+        grid-template-columns: repeat(1, 220px);
+        grid-auto-rows: 188px;
+        grid-row-gap: 54px;
+    }
+
+    .pc-build .build-list li img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .pc-build .build-list li h3 {
+        font-size: 18px;
+    }
+
+    .pc-build .build-list li p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 360px ) {
+    .home-page {
+        padding-top: 20px;
+    }
+
+    .pc-build h2,
+    .best-sellers h2 {
+        font-size: 20px;
+    }
+
+    .pc-build .build-list {
+        grid-auto-rows: 166px;
+        grid-row-gap: 52px;
+    }
+
+    .pc-build .build-list li img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .pc-build .build-list li h3 {
+        font-size: 16px;
+    }
+
+    .pc-build .build-list li p {
+        font-size: 16px;
+    }
+}

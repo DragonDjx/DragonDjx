@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import api from '../../services/api';
 import './styles.css';
+import './responsive.css';
 
 import linhaGamer from '../../assets/linha-gamer.jpg';
 import linhaHome from '../../assets/linha-home.jpg';
@@ -23,18 +24,18 @@ export default function Home() {
             <div className="pc-build">
                 <h2>Escolha sua linha e comece sua jornada</h2>
 
-                <ul className="product-list">
-                    <li>
+                <ul className="build-list">
+                    <li className="linha-home">
                         <img src={linhaHome} alt="Linha home"/>
                         <h3 className="home">Linha Home</h3>
                         <p className="home fade-down">Melhore a sua experiência casual</p>
                     </li>
-                    <li>
+                    <li className="linha-gamer">
                         <img src={linhaGamer} alt="Linha gamer"/>
                         <h3 className="gamer">Linha Gamer</h3>
                         <p className="gamer fade-down">Destrua seus oponentes com potência</p>
                     </li>
-                    <li>
+                    <li className="linha-monte">
                         <img src={linhaMonte} alt="Linha monte seu pc"/>
                         <h3 className="monte">Monte Seu Pc</h3>
                         <p className="monte fade-down">Monte um monstro de acordo com seu gosto</p>

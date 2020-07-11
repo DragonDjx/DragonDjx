@@ -1,5 +1,5 @@
 .home-page {
-    background: #d2d2d2d2;
+    background: #d2d2d2;
 
     width: 100%;
 
@@ -16,7 +16,7 @@
 
     text-align: center;
 
-    padding-bottom: 40px;
+    padding-bottom: 60px;
 
     display: flex;
     flex-direction: column;
@@ -28,29 +28,32 @@
     font-weight: 500;
     font-size: 28px;
 
-    padding-bottom: 28px;
+    padding-bottom: 20px;
 }
 
-.pc-build .product-list {
+.pc-build .build-list {
+    display: grid;
+
     grid-template-columns: repeat(3, 240px);
-    grid-gap: 20px;
+    grid-auto-rows: 280px;
+    grid-column-gap: 8px;
+    grid-row-gap: 60px;
 }
 
-.pc-build .product-list li {
-    height: min-content;
-    width: 100%;
+.pc-build .build-list li {
+    background: #FFF;
 
     padding: 8px 0 0;
 
-    border: 0;
+    transition: 0.2s;
 }
 
-.pc-build .product-list li img {
+.pc-build .build-list li img {
     height: 225px;
     width: 225px;
 }
 
-.pc-build .product-list li h3 {
+.pc-build .build-list li h3 {
     width: 100%;
 
     font-size: 24px;
@@ -61,19 +64,19 @@
     padding: 8px 0;
 }
 
-.pc-build .product-list li h3.home {
+.pc-build .build-list li h3.home {
     background: #cb6ce6;
 }
 
-.pc-build .product-list li h3.gamer {
+.pc-build .build-list li h3.gamer {
     background: #5271ff;
 }
 
-.pc-build .product-list li h3.monte {
+.pc-build .build-list li h3.monte {
     background: #000a3b;
 }
 
-.pc-build .product-list li p {
+.pc-build .build-list li p {
     display: none;
 
     color: whitesmoke;
@@ -82,23 +85,23 @@
     font-weight: 500;
 }
 
-.pc-build .product-list li p.home {
+.pc-build .build-list li p.home {
     background: rgb(189, 51, 253);
 }
 
-.pc-build .product-list li p.gamer {
+.pc-build .build-list li p.gamer {
     background: rgb(8, 172, 248);
 }
 
-.pc-build .product-list li p.monte {
+.pc-build .build-list li p.monte {
     background: rgb(20, 20, 20);
 }
 
-.pc-build .product-list li:hover {
+.pc-build .build-list li:hover {
     transform: unset;
 }
 
-.pc-build .product-list li:hover p {
+.pc-build .build-list li:hover p {
     display: block;
 }
 
@@ -118,16 +121,4 @@
     font-size: 24px;
 
     padding: 0 12px 28px;
-}
-
-@media (min-width: 1200px) {
-    .best-sellers .product-list {
-        grid-template-columns: repeat(5, 200px);
-    }
-}
-
-@media (max-width: 860px) {
-    .best-sellers .product-list {
-        grid-template-columns: repeat(3, 200px);
-    }
 }

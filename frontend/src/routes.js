@@ -13,7 +13,7 @@ export default function Routes() {
       <Overlay />
       <Switch>
         <Route path="/" exact component={Home} />
-        {/* <Route path="/register" component={Register} /> */}
+        {/* <Route path="/produtos" component={Produto} /> */}
       </Switch>
     </BrowserRouter>
   );

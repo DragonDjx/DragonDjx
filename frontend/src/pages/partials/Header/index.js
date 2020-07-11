@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { FaAngleDown, FaSearch, FaUser, FaUserPlus, FaUserLock, FaShoppingCart, FaArrowAltCircleRight, FaTrash } from 'react-icons/fa';
+import { FiMenu }  from 'react-icons/fi';
 
 import './styles.css';
+import './responsive.css';
 
 import logo from '../../../assets/logo.svg';
 
@@ -52,86 +54,75 @@ export default function Header() {
     function handleSearch(e) {
         e.preventDefault();
 
-        history.push(`/result?search=${search}`);
+        history.push(`/produtos?search=${search}`);
     }
 
-    function handleMouseOut(e) {
-        e.preventDefault();
-    };
-
-    function handleClick(e) {
+    function getPage(e, route) {
         e.preventDefault();
 
-        const id = e.target.id;
-
-        if (id === "home-button") {
-            history.push('/');
-        }
-        else {
-            history.push(`/${ id }`);
-        }
-
+        history.push(route);
     };
 
     return (
         <header>
-            <a href="/" id="home-button"  onClick={ handleClick }>
+            <a href="/" id="home-button" onClick={ e => getPage(e, '/') }>
                 <img src={logo} alt="DragonDjx" />
                 DragonDjx
             </a>
 
-            <div id="menu" className="header-list" onMouseOut={ handleMouseOut }>
-                <p id="produtos" onClick={ handleClick }>
+            <div id="menu" className="header-list">
+                <p id="products" onClick={ e => getPage(e, '/produtos') }>
                     Categorias
-                    <FaAngleDown size={20} />
+                    <FaAngleDown size={20} className="svg-angle-down"/>
+                    <FiMenu className="svg-menu"/>
                 </p>
 
                 <ul className="fade">
-                    <li>
+                    <li onClick={ e => getPage(e, '/produtos/teste-1') }>
                         TESTE 1
                         <FaArrowAltCircleRight size={12} color="333"/>
                     </li>
-                    <li>
+                    <li onClick={ e => getPage(e, '/produtos/teste-2') }>
                         TESTE 2
                         <FaArrowAltCircleRight size={12} color="333"/>
                     </li>
-                    <li>
+                    <li onClick={ e => getPage(e, '/produtos/teste-3') }>
                         TESTE 3
                         <FaArrowAltCircleRight size={12} color="333"/>
                     </li>
                 </ul>
             </div>
 
-            <form id="search" action="/result" onSubmit={handleSearch}>
+            <form id="search" onSubmit={ handleSearch }>
                 <input
                     type="text"
                     placeholder="Pesquisar Produto"
                     value={search}
                     onChange={e => setSearch(e.target.value)}
                 />
-                <button type="submit"><FaSearch size={12} color="#000" /></button>
+                <button type="submit"><FaSearch size={12} color="#333" /></button>
             </form>
 
-            <div id="user" className="header-list" onMouseOut={ handleMouseOut }>
-                <p>
+            <div id="user" className="header-list">
+                <p onClick={ e => getPage(e, 'dashboard')}>
                     <FaUser size={14} />
                     Minha Conta
                 </p>
 
                 <ul className="fade">
-                    <li id="register" onClick={ handleClick }>
+                    <li onClick={ e => getPage(e, 'registrar')}>
                         <FaUserPlus size={12} color="333"/>
                         Registrar
                     </li>
-                    <li id="login" onClick={ handleClick }>
+                    <li onClick={ e => getPage(e, 'login')}>
                         <FaUserLock size={12} color="333"/>
                         Entrar
                     </li>
                 </ul>
             </div>
 
-            <div id="cart" className="header-list" onMouseOut={ handleMouseOut }>
-                <p id="cart" onClick={ handleClick }  onMouseOver={getCart}>
+            <div id="cart" className="header-list" onMouseOver={getCart}>
+                <p onClick={ e => getPage(e, 'carrinho') }>
                     <FaShoppingCart size={14} />
                     Carrinho
                 </p>

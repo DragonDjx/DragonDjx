@@ -1,0 +1,260 @@
+@media screen and (max-width: 1440px ) {
+    .product-list {
+        grid-template-columns: repeat(4, 280px);
+        grid-auto-rows: 440px;
+    }
+
+    .product .product-img {
+        height: 200px;
+        width: 200px;
+    }
+
+    .product .product-name {
+        height: 60px;
+
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .product p.value {
+        font-size: 24px;
+    }
+
+    .product p.parceled {
+        font-size: 16px;
+    }
+
+    .product button {
+        height: 36px;
+
+        font-size: 16px;
+    }
+
+    .product button svg{
+        height: 16px;
+        width: 16px;
+    }
+}
+
+@media screen and (max-width: 1280px ) {
+    .product-list {
+        grid-template-columns: repeat(4, 260px);
+        grid-auto-rows: 420px;
+    }
+
+    .product .product-img {
+        height: 180px;
+        width: 180px;
+    }
+}
+
+@media screen and (max-width: 1160px ) {
+    .product-list {
+        grid-template-columns: repeat(4, 240px);
+        grid-auto-rows: 380px;
+    }
+
+    .product .product-img {
+        height: 160px;
+        width: 160px;
+    }
+
+    .product .product-name {
+        height: 54px;
+
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .product p.value {
+        font-size: 22px;
+    }
+
+    .product p.parceled {
+        font-size: 14px;
+    }
+
+    .product button{
+        height: 32px;
+
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 1040px ) {
+    .product-list {
+        grid-template-columns: repeat(4, 200px);
+        grid-auto-rows: 340px;
+    }
+
+    .product .product-img {
+        height: 140px;
+        width: 140px;
+    }
+
+    .product p.value {
+        font-size: 18px;
+    }
+
+    .product p.parceled {
+        font-size: 12px;
+    }
+
+    .product button {
+        height: 28px;
+
+        font-size: 12px;
+    }
+
+    .product button svg {
+        height: 12px;
+        width: 12px;
+    }
+}
+
+@media screen and (max-width: 920px ) {
+    .product-list {
+        grid-template-columns: repeat(3, 200px);
+        grid-auto-rows: 320px;
+    }
+
+    .product .product-name {
+        height: 48px;
+
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+
+@media screen and (max-width: 800px ) {
+    .product-list {
+        grid-template-columns: repeat(3, 200px);
+        grid-auto-rows: 320px;
+    }
+
+    .product button {
+        height: 26px;
+
+        font-size: 10px;
+    }
+
+    .product button svg {
+        height: 10px;
+        width: 10px;
+    }
+}
+
+@media screen and (max-width: 760px ) {
+    .product-list {
+        grid-template-columns: repeat(2, 200px);
+        grid-auto-rows: 320px;
+    }
+}
+
+@media screen and (max-width: 498px ) {
+    .product-list {
+        grid-template-columns: repeat(1, 200px);
+        grid-auto-rows: 320px;
+    }
+}
+
+/* @media screen and (max-width: 360px ) {
+
+    .monte-image {
+        width: 125px;
+        height: 125px;
+    }
+
+    div.thumbnail {
+        width: 180px;
+        height: 575px;
+    }
+
+    a.btn-comprar {
+        background-color: rgb(189, 51, 253);
+        color: whitesmoke;
+        margin-top: 55px;
+        width: 125px;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    button.btn-indisponivel {
+        margin-top: 55px;
+        width: 155px;
+        height: 50px;
+        font-size: 14px;
+        background-color: rgb(20, 20, 20);
+        color: white;
+    }
+
+    span.icon-comprar {
+        color: rgb(8, 172, 248);
+        padding-right: 10px;
+    }
+}
+
+@media screen and (max-width: 310px) {
+
+    #Dragondjx {
+        width: 35px !important;
+        height: 25px !important;
+    }
+
+    #djx-title {
+        font-size: 21px;
+        font-family: 'Ubuntu', sans-serif; 
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 270px ) {
+
+    img.monte-image {
+        width: 110px;
+        height: 110px;
+    }
+
+    .linha-home {
+        background-color: #cb6ce6;
+        font-size: 27px;
+        color: whitesmoke;
+        height: 40px;
+        font-family: 'Ubuntu', sans-serif;
+        margin-bottom: 160px;
+    }
+
+    h3#corrigirTamanhokkk1 {
+        background-color: #cb6ce6;
+        margin-bottom: 0px;
+    }
+
+    h3#corrigirTamanhokkk2 {
+        background-color: #5271ff;
+        margin-bottom: 0px;
+    }
+
+    h3#corrigirTamanhokkk3 {
+        background-color: #000a3b;
+        margin-bottom: 0px;
+    }
+
+    .linha-gamer {
+        background-color: #5271ff;
+        font-size: 27px;
+        color: whitesmoke;
+        height: 40px;
+        font-family: 'Ubuntu', sans-serif;
+        margin-bottom: 150px;
+    }
+
+    .linha-monte {
+        background-color: #000a3b;
+        font-size: 27px;
+        color: whitesmoke;
+        height: 40px;
+        font-family: 'Ubuntu', sans-serif;
+        margin-bottom: 100px;
+    }
+} */

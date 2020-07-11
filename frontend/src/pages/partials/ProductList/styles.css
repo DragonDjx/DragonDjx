@@ -1,44 +1,36 @@
 .product-list {
     display: grid;
-    grid-template-columns: repeat(4, 200px);
-    grid-auto-rows: 300px;
+    grid-template-columns: repeat(4, 300px);
+    grid-auto-rows: 460px;
     grid-gap: 12px;
-    list-style: none;
 }
 
-.product-list li {
+.product-list .product {
     display: flex;
     flex-direction: column;
     justify-content: center;
 
     background: #FFF;
 
-    padding: auto;
     border-radius: 4px;
     border: 1px solid #ddd;
 
     transition: 0.2s;
 }
 
-.product-list li img {
+.product-list .product .product-img {
     margin: 0 auto;
-
-    height: 120px;
-    width: 120px;
 
     cursor: pointer;
 }
 
-.product-list li h4 {
-    height: 42px;
+.product-list .product .product-name {
     margin-bottom: 20px;
 
     font-family: 'Ubuntu', sans-serif;
     color: inherit;
 
-    font-size: 12px;
     font-weight: 500;
-    line-height: 15px;
 
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -49,33 +41,29 @@
     cursor: pointer;
 }
 
-.product-list li p.value {
+.product-list .product p.value {
     color: #bd33fd;
 
     text-align: left;
-
-    font-size: 16px;
 }
 
-.product-list li p.parceled {
+.product-list .product p.parceled {
     color: #5271ff;
 
     text-align: left;
-
-    font-size: 12px;
 }
 
-.product-list li .buttons {
+.product-list .product .buttons {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.product-list li .buttons button + button {
+.product-list .product .buttons button + button {
     margin-left: 4px;
 }
 
-.product-list li button {
+.product-list .product button {
     background-color: #bd33fd;
     color: whitesmoke;
     border-color: #ccc;
@@ -86,8 +74,6 @@
     border-radius: 6px;
     padding: 6px 10px;
 
-    font-size: 10px;
-
     transition: opacity 0.2s;
 
     display: flex;
@@ -95,6 +81,6 @@
     justify-content: center;
 }
 
-.product-list li:hover {
+.product-list .product:hover {
     transform: scale(1.1);
 }
