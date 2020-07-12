@@ -21,7 +21,7 @@ export default function ProductList(products) {
         <ul className="product-list">
             {products.map(product => (
                 <li className="product" key={product.id}>
-                    <img className="product-img" src={`http://192.168.0.11:3333/files/${product.image.key}`} alt="Produto" />
+                    <img className="product-img" src={product.image.url} alt="Produto" />
 
                     <h4 className="product-name">{product.title}</h4>
 
