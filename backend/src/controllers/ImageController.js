@@ -5,7 +5,7 @@ module.exports = {
         const product_id = request.body.id;
         const { originalname: name, size, key } = request.file;
 
-        const url = `http://192.168.0.10:3333/files/${key}`
+        const url = `http://dragondjx.us-3.evennode.com/files/${key}`
 
         await connection('images').insert({
             name,
