@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './styles.css';
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 
@@ -12,19 +13,19 @@ export default function Footer() {
                 <ul className="faq">
                     <li><h2>FAQ</h2></li>
 
-                    <li><a href="">Como comprar</a></li>
-                    <li><a href="">Formas de pagamento</a></li>
-                    <li><a href="">Prazos e entregas</a></li>
-                    <li><a href="">Segurança</a></li>
+                    <li><Link>Como comprar</Link></li>
+                    <li><Link>Formas de pagamento</Link></li>
+                    <li><Link>Prazos e entregas</Link></li>
+                    <li><Link>Segurança</Link></li>
                 </ul>
                 
                 <ul className="about">
                     
                     <li><h2>Sobre nós</h2></li>
-                    <li><a href="">Termos e condições</a></li>
-                    <li><a href="">Sobre nós</a></li>
-                    <li><a href="">Trocas e devoluções</a></li>
-                    <li><a href="">TESTE</a></li>
+                    <li><Link>Termos e condições</Link></li>
+                    <li><Link>Sobre nós</Link></li>
+                    <li><Link>Trocas e devoluções</Link></li>
+                    <li><Link>TESTE</Link></li>
                     
                 </ul>
             </div>
