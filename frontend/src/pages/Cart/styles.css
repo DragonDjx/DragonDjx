@@ -1,0 +1,204 @@
+.cart-page {
+    background: var(--background-color);
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 60px 5%;
+}
+
+.cart-shop {
+    height: auto;
+    width: 100%;
+
+    text-align: center;
+
+    padding-bottom: 60px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-shop h1 {
+    margin: 35px 0px;
+    font-weight: 500;
+}
+
+.cart-shop h1 > span {
+    color: rgb(8, 172, 248);
+    padding: 0px 10px 0px 0px;
+}
+
+.shop-info {
+    display: grid;
+    width: 100%;
+    /* height: auto; */
+    min-height: 350px;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 2fr 1fr;
+    grid-template-areas: 
+        "shop-table ."
+        "shop-table ."
+        "shipping price-table"
+        ".  finalize"
+    ;
+}
+
+.shop-table {
+    grid-area: shop-table;
+}
+
+.shop-table li {
+    border: 1px solid black;
+    padding: 9px;
+    margin-bottom: 10px;
+}
+
+.shop-table li > img {
+    width: 40px;
+    height: 32px;
+}
+
+.shop-table li span {
+    padding: 0px 10px;
+    line-height: 30px;
+    vertical-align: top;
+}
+
+.shop-table a{
+    font-size: 17px;
+    background-color: white;
+    color: rgb(189, 51, 253);
+    padding: 0px 8px;
+}
+
+.shop-table a:hover{
+    font-size: 17px;
+    background-color: white;
+    color: #222;
+    cursor: pointer;
+}
+
+.trashIcon {
+    float: right;
+}
+
+.shipping {
+    grid-area: shipping;
+    margin-top: 40px;
+}
+
+.truckIcon {
+    color: rgb(189, 51, 253);
+    font-size: 26px;
+    margin: 0px 5px 0px 0px;
+}
+
+.shipping span:nth-child(2),
+input {
+    font-weight: 500;
+    vertical-align: super;
+    padding: 0px 5px;
+    font-size: 17px;
+}
+
+.shipping input {
+    width: 200px;
+    height: 25px
+}
+
+.shipping button {
+    font-size: 12px;
+    padding: 6px;
+    border-radius: 10px;
+    vertical-align: top;
+    background-color: rgb(8, 172, 248);
+    color: whitesmoke;
+}
+
+.shipping button:hover {
+    transition: 0.2s;
+    font-size: 12px;
+    padding: 6px;
+    border-radius: 10px;
+    vertical-align: top;
+    background-color: #222;
+    color: whitesmoke;
+}
+
+.price-table {
+    grid-area: price-table;
+    margin-top: 20px;
+    padding: 7px;
+    border: 1px solid black;
+}
+
+.price:nth-child(1) {
+    padding-left: 5px;
+}
+
+.price-table li:nth-child(3) {
+    margin-bottom: 15px;
+}
+
+.price { 
+    padding-left: 15px; 
+}
+.price-table li {
+    font-size: 19px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.price-table li:nth-child(3) {
+    color: rgb(8, 172, 248);
+}
+
+.price-table span {
+    color: rgb(189, 51, 253);
+}
+
+.finalize {
+    grid-area: finalize;
+}
+
+.finalize button {
+    margin-top: 20px;
+    width: 250px;
+    padding: 11px 10px;
+    border-radius: 10px;
+    background-color: rgb(189, 51, 253);
+    color: whitesmoke;
+}
+
+.finalize .arrowRight {
+    padding: 0px 5px 0px 5px;
+    margin-right: 0px;
+    color: rgb(8, 172, 248);
+}
+
+@media (max-width: 545px) {
+    .shop-info {
+        display: grid;
+        width: 105%;
+        /* height: auto; */
+        min-height: 350px;
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 130px 330px 150px;
+        grid-template-areas: 
+            "shop-table"
+            "shipping"
+            "price-table"
+            "finalize"
+        ;
+    }
+
+    .productName {
+        overflow: hidden;
+    }
+}

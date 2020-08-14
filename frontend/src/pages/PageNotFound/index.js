@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import './styles.css';
 import notFoundImage from '../../assets/notFoundImage.png'
@@ -39,12 +38,12 @@ export default function NotFoundPage() {
 
                 <h3>A página que você está tentando acessar não foi encontrada, verifique o link ou então volte a navegar </h3>
 
-                <Link to="/">
+                <a href="/">
                     <span>
                         <FiArrowLeft/>
                     </span>
                     <strong>Voltar ao inicio</strong>
-                </Link>
+                </a>
             </div>
         </div>
     )

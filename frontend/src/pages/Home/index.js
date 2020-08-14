@@ -14,11 +14,9 @@ export default function Home() {
     const [bestSellers, setBestSellers] = useState([]);
 
     useEffect(() => {
-        if (bestSellers.length === 0) {
-            api.get('products/bestSellers?limit=5').then(response => {
-                setBestSellers(response.data);
-            });
-        };
+        api.get('products/bestSellers?limit=5').then(response => {
+            setBestSellers(response.data);
+        })
     });
 
     return (
