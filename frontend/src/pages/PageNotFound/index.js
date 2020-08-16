@@ -1,30 +1,32 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { FiArrowLeft } from 'react-icons/fi';
+
+import notFoundImage from '../../assets/notFoundImage.png';
+import logo from '../../assets/logo.svg';
 
 import './styles.css';
-import notFoundImage from '../../assets/notFoundImage.png'
-import logo from '../../assets/logo.svg'
-import { FiArrowLeft } from 'react-icons/fi';
 
 export default function NotFoundPage() {
     
     function addCloredImage() {
 
-        const imageName = document.querySelector('#imageNotFound')
+        const imageName = document.querySelector('#imageNotFound');
 
-        imageName.setAttribute('src', `${logo}`)
-        imageName.style.width = '225px'
-        imageName.style.height = '225px'
+        imageName.setAttribute('src', `${logo}`);
+        imageName.style.width = '225px';
+        imageName.style.height = '225px';
 
-        return imageName
+        return imageName;
     }
 
     function delCloredImage() {
 
-        const imageName = document.querySelector('#imageNotFound')
+        const imageName = document.querySelector('#imageNotFound');
 
-        imageName.setAttribute('src', `${notFoundImage}`)
+        imageName.setAttribute('src', `${notFoundImage}`);
         
-        return imageName
+        return imageName;
     }
 
     return (
@@ -38,12 +40,12 @@ export default function NotFoundPage() {
 
                 <h3>A página que você está tentando acessar não foi encontrada, verifique o link ou então volte a navegar </h3>
 
-                <a href="/">
+                <Link to="/">
                     <span>
                         <FiArrowLeft/>
                     </span>
                     <strong>Voltar ao inicio</strong>
-                </a>
+                </Link>
             </div>
         </div>
     )

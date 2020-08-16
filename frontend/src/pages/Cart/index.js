@@ -1,7 +1,10 @@
 import React from 'react';
-import {FaShoppingCart, FaTrash, FaMinus, FaPlus, FaTruck, FaCreditCard, FaBarcode, FaArrowRight} from 'react-icons/fa'
-import imgExample from '../../assets/linha-gamer.jpg'
-import './styles.css'
+import { Link } from 'react-router-dom';
+import {FaShoppingCart, FaTrash, FaMinus, FaPlus, FaTruck, FaCreditCard, FaBarcode, FaArrowRight} from 'react-icons/fa';
+
+import imgExample from '../../assets/linha-gamer.jpg';
+
+import './styles.css';
 
 function Cart() {
     return(
@@ -14,13 +17,61 @@ function Cart() {
             <div className="shop-info">
 
                 <ul className="shop-table">
-                    <li><img src={imgExample} alt="Item do Carrinho"/><span className="productName">Mouse Gamer Motospeed V40 FMSMS0004PTOM 4000 DPI RGB Preto</span><span><a><FaMinus/></a> <span>1</span> <a><FaPlus /></a></span> <span>R$ 366,67</span> <span className="trashIcon"><a><FaTrash /></a></span></li>
+                    <li>
+                        <img src={imgExample} alt="Item do Carrinho"/>
+                        <span className="productName">Mouse Gamer Motospeed V40 FMSMS0004PTOM 4000 DPI RGB Preto</span>
+                        <span>
+                            <Link to="/"><FaMinus/></Link>
+                            <span>1</span>
+                            <Link to="/"><FaPlus /></Link>
+                        </span>
+                        <span>R$ 366,67</span>
+                        <span className="trashIcon">
+                            <Link to="/"><FaTrash /></Link>
+                        </span>
+                    </li>
 
-                    <li><img src={imgExample} alt="Item do Carrinho"/><span className="productName">Mouse Gamer Motospeed V40 FMSMS0004PTOM 4000 DPI RGB Preto</span><span><a><FaMinus/></a> <span>1</span>  <a><FaPlus /></a></span> <span>R$ 366,67</span> <span className="trashIcon"><a><FaTrash /></a></span></li>
+                    <li>
+                        <img src={imgExample} alt="Item do Carrinho"/>
+                        <span className="productName">Mouse Gamer Motospeed V40 FMSMS0004PTOM 4000 DPI RGB Preto</span>
+                        <span>
+                            <Link to="/"><FaMinus/></Link>
+                            <span>1</span>
+                            <Link to="/"><FaPlus /></Link>
+                        </span>
+                        <span>R$ 366,67</span>
+                        <span className="trashIcon">
+                            <Link to="/"><FaTrash /></Link>
+                        </span>
+                    </li>
 
-                    <li><img src={imgExample} alt="Item do Carrinho"/><span className="productName">Mouse Gamer Motospeed V40 FMSMS0004PTOM 4000 DPI RGB Preto</span><span><a><FaMinus/></a> <span>1</span>  <a><FaPlus /></a></span> <span>R$ 366,67</span> <span className="trashIcon"><a><FaTrash /></a></span></li>
+                    <li>
+                        <img src={imgExample} alt="Item do Carrinho"/>
+                        <span className="productName">Mouse Gamer Motospeed V40 FMSMS0004PTOM 4000 DPI RGB Preto</span>
+                        <span>
+                            <Link to="/"><FaMinus/></Link>
+                            <span>1</span>
+                            <Link to="/"><FaPlus /></Link>
+                        </span>
+                        <span>R$ 366,67</span>
+                        <span className="trashIcon">
+                            <Link to="/"><FaTrash /></Link>
+                        </span>
+                    </li>
 
-                    <li><img src={imgExample} alt="Item do Carrinho"/><span className="productName">Mouse Gamer Motospeed V40 FMSMS0004PTOM 4000 DPI RGB Preto</span><span><a><FaMinus/></a> <span>1</span>  <a><FaPlus /></a></span> <span>R$ 366,67</span> <span className="trashIcon"><a><FaTrash /></a></span></li>
+                    <li>
+                        <img src={imgExample} alt="Item do Carrinho"/>
+                        <span className="productName">Mouse Gamer Motospeed V40 FMSMS0004PTOM 4000 DPI RGB Preto</span>
+                        <span>
+                            <Link to="/"><FaMinus/></Link>
+                            <span>1</span>
+                            <Link to="/"><FaPlus /></Link>
+                        </span>
+                        <span>R$ 366,67</span>
+                        <span className="trashIcon">
+                            <Link to="/"><FaTrash /></Link>
+                        </span>
+                    </li>
                 </ul>
 
                 <ul className="price-table">

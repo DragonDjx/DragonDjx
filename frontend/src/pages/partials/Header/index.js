@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { FaAngleDown, FaSearch, FaUser, FaUserPlus, FaUserLock, FaShoppingCart, FaArrowAltCircleRight, FaTrash } from 'react-icons/fa';
 import { FiMenu }  from 'react-icons/fi';
 
@@ -65,10 +65,10 @@ export default function Header() {
 
     return (
         <header>
-            <a href="/" id="home-button" onClick={ e => getPage(e, '/') }>
+            <Link to="/" id="home-button" onClick={ e => getPage(e, '/') }>
                 <img src={logo} alt="DragonDjx" />
                 DragonDjx
-            </a>
+            </Link>
 
             <div id="menu" className="header-list">
                 <p id="products" onClick={ e => getPage(e, '/produtos') }>

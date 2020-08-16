@@ -1,8 +1,9 @@
 import React from 'react';
-
-import './styles.css';
+import { Link } from 'react-router-dom';
 import {FaShoppingCart} from "react-icons/fa";
 import { FiArrowLeft } from 'react-icons/fi';
+
+import './styles.css';
 
 export default function CartEmpty() {
 
@@ -15,12 +16,12 @@ export default function CartEmpty() {
                 <p>Desculpa, não encontramos nenhum item em seu carrinho :( </p>
 
 
-                <a href="/">
+                <Link to="/">
                     <span>
                         <FiArrowLeft/>
                     </span>
                     <strong>Voltar ao inicio</strong>
-                </a>
+                </Link>
             </div>
 
             
