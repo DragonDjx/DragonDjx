@@ -37,7 +37,8 @@ function Cart() {
                 </ul>
 
                 <ul className="shipping">
-                    <li><span className="truckIcon"><FaTruck /></span> <span>Calcular Frete</span> <input type="text" placeholder="CEP"/> <button type="submit">Calcular</button></li>
+                    <li><span className="truckIcon"><FaTruck /></span> <span>Calcular Frete</span> <input type="text" placeholder="CEP"  maxlength="8" autocomplete="off"/> <button type="submit">Calcular</button></li>
+
                 </ul>
 
                 <ul className="finalize">

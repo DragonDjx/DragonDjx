@@ -1,0 +1,132 @@
+.register-page {
+    background: var(--background-color);
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 60px 5%;
+}
+
+.register-content {
+    height: auto;
+    width: 100%;
+
+    text-align: center;
+
+    padding-bottom: 60px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-form h1 {
+    font-size: 36px;
+    text-align: center;
+    color: rgb(8, 172, 248);
+    margin-bottom: 30px;
+    font-weight: normal;
+  }
+  .register-form .social-icon {
+      width: 100%;
+      font-size: 20px;
+      padding-top: 20px;
+      color: #fff;
+      text-align: center;
+      float: left;
+  }
+  .register-form {
+      background: #fff;
+      width: 450px;
+      border-radius: 6px;
+      margin: 0 auto;
+      display: table;
+      padding: 15px 30px 30px;
+      box-sizing: border-box;
+  }
+  .form-group {
+    float: left;
+    width: 100%;
+    margin: 0 0 15px;
+    position: relative;
+  }
+  .register-form input {
+      width: 100%;
+      padding: 5px;
+      height: 56px;
+      border-radius: 74px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      font-size: 15px;
+      padding-left: 75px;
+  }
+  .register-form .form-group .input-icon {
+      font-size: 15px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      align-items: center;
+      position: absolute;
+      border-radius: 25px;
+      bottom: 0;
+      height: 100%;
+      padding-left: 35px;
+      color: #666;
+  }
+  .register-form .register-btn {
+    background: rgb(8, 172, 248);
+    padding: 11px 50px;
+    border-color: rgb(8, 172, 248);
+    color: #fff;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 20px;
+    border: 1px solid rgb(8, 172, 248);
+    border-radius: 44px;
+    width: 100%;
+    height: 56px;
+    cursor: pointer;
+  }
+  .register-form .reset-psw {
+    float: left;
+    width: 100%;
+    text-decoration: none;
+    color: rgb(8, 172, 248);
+    font-size: 14px;
+    text-align: center;
+    margin-top: 11px;
+  }
+  .register-form .social-icon button {
+      font-size: 20px;
+      color: white;
+      height: 50px;
+      width: 50px;
+      background: rgb(8, 172, 248);
+      border-radius: 60%;
+      margin: 0px 10px;
+      border: none;
+      cursor: pointer;
+  }
+  .register-form button:hover{
+    opacity: 0.9;
+  }
+  .register-form .seperator {
+    float: left;
+    width: 100%;
+    border-top: 1px solid #ccc;
+    text-align: center;
+    margin: 50px 0 0;
+  }
+
+  @media screen and (max-width:767px) {
+  .register-form {
+      width: 90%;
+      padding: 15px 15px 30px;
+  }
+}
