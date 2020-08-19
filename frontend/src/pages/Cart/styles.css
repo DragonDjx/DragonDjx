@@ -176,6 +176,11 @@ input {
     color: whitesmoke;
 }
 
+.finalize button:hover {
+    background-color: #222;
+    color: whitesmoke;
+}
+
 .finalize .arrowRight {
     padding: 0px 5px 0px 5px;
     margin-right: 0px;

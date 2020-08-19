@@ -7,29 +7,29 @@ function Register() {
 
         <div className="register-page">
             <div className="register-content">
-                <div class="register-form">
+                <div className="register-form">
                     <form>
                         <h1>Registrar</h1>
 
-                        <div class="form-group">
+                        <div className="form-group">
                             <input type="text" name="user" placeholder="Nome completo" />
-                            <span class="input-icon"><i class="fa fa-user"></i></span>
+                            <span className="input-icon"><i className="fa fa-user"></i></span>
                         </div>
 
-                        <div class="form-group">
+                        <div className="form-group">
                             <input type="email" name="email" placeholder="E-mail" />
-                            <span class="input-icon"><i class="fa fa-envelope"></i></span>
+                            <span className="input-icon"><i className="fa fa-envelope"></i></span>
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                             <input type="password" name="psw" placeholder="Senha" />
-                            <span class="input-icon"><i class="fa fa-lock"></i></span>
+                            <span className="input-icon"><i className="fa fa-lock"></i></span>
                         </div>      
-                        <div class="form-group">
+                        <div className="form-group">
                             <input type="password" name="psw" placeholder="Confirmar senha" />
-                            <span class="input-icon"><i class="fa fa-lock"></i></span>
+                            <span className="input-icon"><i className="fa fa-lock"></i></span>
                         </div>      
-                        <button type="submit" class="register-btn">Registrar</button>      
-                        <Link to="/login" class="reset-psw">Já tem uma conta?</Link>
+                        <button type="submit" className="register-btn">Registrar</button>      
+                        <Link to="/login" className="reset-psw">Já tem uma conta?</Link>
                         
             
                     </form>

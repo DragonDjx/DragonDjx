@@ -9,21 +9,21 @@ function Login() {
         <div className="login-page">
             <div className="content-login">
 
-                <div class="login-form">
+                <div className="login-form">
                     <form>
                         <h1>Login</h1>
-                        <div class="form-group">
+                        <div className="form-group">
                             <input type="email" name="email" placeholder="E-mail" />
-                            <span class="input-icon"><i class="fa fa-envelope"></i></span>
+                            <span className="input-icon"><i className="fa fa-envelope"></i></span>
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                             <input type="password" name="psw" placeholder="Senha" />
-                            <span class="input-icon"><i class="fa fa-lock"></i></span>
+                            <span className="input-icon"><i className="fa fa-lock"></i></span>
                         </div>      
-                        <button type="submit" class="login-btn">Login</button>      
-                        <Link to="/esquecer" class="reset-psw">Esqueceu sua senha?</Link>
-                        <div class="seperator"><b>ou</b></div>
-                        <Link to="/registrar" class="reset-psw">Crie sua conta</Link>
+                        <button type="submit" className="login-btn">Login</button>      
+                        <Link to="/esquecer" className="reset-psw">Esqueceu sua senha?</Link>
+                        <div className="seperator"><b>ou</b></div>
+                        <Link to="/registrar" className="reset-psw">Crie sua conta</Link>
                         
             
                     </form>

@@ -10,6 +10,7 @@ import Footer from './pages/partials/Footer';
 import Cart from './pages/Cart'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 import Login from './pages/Login'
 import Register from './pages/Register'
+import Products from './pages/Products'
 
 import Home from './pages/Home';
 
@@ -24,7 +25,7 @@ export default function Routes() {
         <Route path="/carrinho" component={Cart}/>
         <Route path="/login" component={Login}/>
         <Route path="/registrar" component={Register}/>
-        {/* <Route path="/produtos" component={Produtos} /> */}
+        <Route path="/produtos" component={Products} />
           {/* <Route path=":produto" component={Produto} /> */}
         <Route component={NotFoundPage} />
       </Switch>

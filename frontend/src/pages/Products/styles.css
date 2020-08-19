@@ -1,0 +1,259 @@
+.products-page {
+    background: var(--background-color);
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 60px 5%;
+}
+
+.product-build {
+    height: auto;
+    width: 100%;
+
+    text-align: center;
+
+    padding-bottom: 60px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.productInfo {
+    display: grid;
+    width: 100%;
+    min-height: 400px;
+    grid-template-columns: 200px 450px 1fr;
+    
+    grid-template-areas: 
+        "slide-show showProduct productDescription"
+    ;
+}
+
+.slide-show {
+    grid-area: slide-show;
+}
+
+.slide-show ul li img {
+    width: 100px;
+    height: 100px;
+}
+
+.slide-show ul li img:hover {
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.showProduct {
+    grid-area: showProduct;
+}
+
+.showProduct img {
+    width: 250px;
+    height: 250px;
+}
+
+.productDescription {
+    grid-area: productDescription;
+}
+
+.price {
+    color: rgb(8, 172, 248);
+    padding-right: 5px;
+    padding-left: 0px;
+}
+.iconClass {
+    color: rgb(189, 51, 253);
+    padding-right: 7px;
+    font-size: 25px;
+    vertical-align: middle;
+}
+
+.productTitle {
+    font-size: 25px;
+    font-weight: 400;
+    border-bottom: 1px solid gray;
+    padding-bottom: 20px;
+    text-align: left;
+}
+
+.productDisp {
+    font-size: 21px;
+    font-weight: 400;
+    border-bottom: 1px solid gray;
+    padding: 20px 0px;
+    text-align: left;
+
+}
+
+button.buyButton {
+    
+    width: 150px;
+    height: 45px;
+    padding: 9px 5px;
+    margin-left: 10px;
+    border-radius: 8px;
+    background-color: rgb(189, 51, 253);
+    color: whitesmoke;
+}
+
+button.buyButton:hover {
+    background-color: #222;
+    color: whitesmoke;
+}
+
+.arrowRight {
+    padding: 0px 5px 0px 0px;
+    margin-right: 0px;
+    color: rgb(8, 172, 248);
+}
+
+.productPrice {
+    padding: 10px 0px;
+    font-size: 21px;
+    font-weight: 400;
+    padding-bottom: 20px;
+    text-align: left;
+}
+
+.productPriceCard {
+    color: rgb(8, 172, 248);
+    padding: 5px 0px;
+    font-size: 21px;
+    font-weight: 400;
+    border-bottom: 1px solid gray;
+    text-align: left;
+}
+
+.shipping {
+    padding: 0px 0px;
+    font-size: 25px;
+    font-weight: 400;
+    padding-bottom: 20px;
+    text-align: left;
+}
+
+.shipping span:nth-child(2),
+input {
+    font-weight: 500;
+    vertical-align: super;
+    padding: 0px 5px;
+    font-size: 17px;
+}
+
+.shipping input {
+    width: 200px;
+    height: 25px
+}
+
+.shipping button {
+    font-size: 12px;
+    padding: 6px;
+    border-radius: 10px;
+    vertical-align: top;
+    background-color: rgb(8, 172, 248);
+    color: whitesmoke;
+}
+
+.shipping button:hover {
+    transition: 0.2s;
+    font-size: 12px;
+    padding: 6px;
+    border-radius: 10px;
+    vertical-align: top;
+    background-color: #222;
+    color: whitesmoke;
+}
+
+.garanted {
+    color: rgb(8, 172, 248);
+    padding: 10px 0px;
+    font-size: 25px;
+    font-weight: 400;
+    padding-bottom: 20px;
+    text-align: left;
+}
+
+.truckIcon {
+    color: rgb(189, 51, 253);
+    font-size: 26px;
+    margin: 0px 0px 0px 0px;
+}
+
+@media (max-width: 920px) {
+
+    .productInfo {
+        display: grid;
+        width: 100%;
+        min-height: 400px;
+        grid-template-columns: 150px 400px 1fr;
+        
+        grid-template-areas: 
+            "slide-show showProduct productDescription"
+        ;
+    }
+}
+
+@media (max-width: 820px) {
+
+    .productInfo {
+        display: grid;
+        width: 100%;
+        min-height: 400px;
+        grid-template-columns: 150px 300px 1fr;
+        
+        grid-template-areas: 
+            "slide-show showProduct productDescription"
+        ;
+    }
+
+    .showProduct img {
+        width: 200px;
+        height: 200px;
+    }    
+}
+
+@media (max-width: 700px) {
+
+    .productInfo {
+        display: grid;
+        width: 100%;
+        min-height: 400px;
+        grid-template-columns: 1fr 1fr;
+        
+        grid-template-areas: 
+            "slide-show showProduct"
+            "slide-show showProduct"
+            "productDescription"
+        ;
+    }
+
+    .slide-show ul li{
+        display: inline-block;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .productInfo {
+        display: grid;
+        width: 100%;
+        min-height: 400px;
+        grid-template-columns: 100%;
+        
+        grid-template-areas: 
+            "showProduct"
+            "productDescription"
+        ;
+    }
+
+    .slide-show {
+        display: none;
+    }
+
+}
