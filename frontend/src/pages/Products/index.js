@@ -38,11 +38,6 @@ function Products() {
                             {/* Não tira o ID "myImage" */}
                             <li className="zoom" ><img id="myImage" src={imageSlide != null && imageSlide.length !== 0 ? imageSlide : imgExample} alt="" /></li>
 
-                            <li>
-                                <div className="img-zoom-container">
-                                    <div id="myresult" className="img-zoom-result"></div>
-                                </div>
-                            </li>
                         </ul>
                     </div>
  
