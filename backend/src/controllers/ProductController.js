@@ -35,15 +35,24 @@ module.exports = {
     },
 
     async productInfo(request, response) {
-        const { id } = request.body;
+        const { id, title } = request.body;
 
-        const product = await connection('products')
-        .where('id', id)
-        .select('*')
-        .first();
+        var product;
+        
+        if (id == undefined) {
+            product = await connection('products')
+                .where('title', title)
+                .select('*')
+                .first();
+        } else {
+            product = await connection('products')
+                .where('id', id)
+                .select('*')
+                .first();
+        };
 
         product.images = await connection('images')
-        .where('product_id', id)
+        .where('product_id', product.id)
         .select('*');
 
         return response.json(product);
