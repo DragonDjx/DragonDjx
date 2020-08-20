@@ -78,7 +78,7 @@
         max-width: 100px;
     }
 
-    .header-list p {
+    .header-list a {
         font-size: 12px;
     }
 
@@ -87,7 +87,7 @@
         width: 10px;
     }
 
-    .header-list p svg.svg-angle-down {
+    .header-list a svg.svg-angle-down {
         height: 16px;
         width: 16px;
     }
@@ -149,7 +149,7 @@
         max-width: 90px;
     }
 
-    .header-list p {
+    .header-list a {
         font-size: 10px;
     }
 
@@ -179,7 +179,7 @@
         font-size: 8px;
     }
 
-    #cart ul li p.value {
+    #cart ul li a.value {
         font-size: 10px;
     }
 }
@@ -215,21 +215,21 @@
         max-width: 36px;
     }
 
-    .header-list p {
+    .header-list a {
         font-size: 0;
     }
 
-    .header-list p svg {
+    .header-list a svg {
         height: 16px;
         width: 16px;
     }
 
-    .header-list p svg.svg-angle-down {
+    .header-list a svg.svg-angle-down {
         height: 0;
         width: 0;
     }
 
-    #menu p svg.svg-menu {
+    #menu a svg.svg-menu {
         height: 20px;
         width: 20px;
     }

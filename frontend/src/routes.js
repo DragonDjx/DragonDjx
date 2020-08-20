@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import NotFoundPage from './pages/PageNotFound';
-import CartEmpty from './pages/CartEmpty';
 
 import Header from './pages/partials/Header';
 import Overlay from './pages/partials/Overlay';
@@ -21,12 +20,10 @@ export default function Routes() {
       <Overlay />
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/CartEmpty" component={CartEmpty} />
-        <Route path="/carrinho" component={Cart}/>
+        <Route path="/cart" component={Cart}/>
         <Route path="/login" component={Login}/>
         <Route path="/registrar" component={Register}/>
-        <Route path="/produtos" component={Products} />
-          {/* <Route path=":produto" component={Produto} /> */}
+        <Route path="/produtos/:productName" component={Products} />
         <Route component={NotFoundPage} />
       </Switch>
       <Footer />

@@ -1,78 +1,76 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {FaShoppingCart, FaTrash, FaMinus, FaPlus, FaTruck, FaCreditCard, FaBarcode, FaArrowRight} from 'react-icons/fa';
-
-import imgExample from '../../assets/linha-gamer.jpg';
+import { FiArrowLeft } from 'react-icons/fi';
 
 import './styles.css';
 
 function Cart() {
-    return(
-        <div className="cart-page">
-            <div className="cart-shop">
+    const [cart, setCart] = useState('');
+    
+    if (cart === '') {
+        if (localStorage.getItem('cart') == null) {
+            localStorage.setItem('cart', "[]");
+        } else {
+            setCart(JSON.parse(localStorage.getItem('cart')));
+        }
+    }
 
-                <h1><span><FaShoppingCart /></span>Carrinho de compras</h1>
-            </div>
+    function removeProduct(e, productId) {
+        e.preventDefault();
+        
+        const item = document.getElementById(productId);
+        item.classList.add("fade-out");
 
-            <div className="shop-info">
+        setTimeout(function() {
+            const newCart = cart.filter(product => product.id !== productId);
 
-                <ul className="shop-table">
-                    <li>
-                        <img src={imgExample} alt="Item do Carrinho"/>
-                        <span className="productName">Mouse Gamer Motospeed V40 FMSMS0004PTOM 4000 DPI RGB Preto</span>
+            localStorage.setItem('cart', JSON.stringify(newCart));
+            setCart(newCart);
+        }, 200);
+    };
+
+    function renderCart() {
+        if (cart.length === 0) {
+            return (
+                <div className="cartEmpty">
+                    <p>Desculpa, não encontramos nenhum item em seu carrinho {":("} </p>
+
+                    <Link to="/" className="backButton">
                         <span>
-                            <Link to="/"><FaMinus/></Link>
-                            <span>1</span>
-                            <Link to="/"><FaPlus /></Link>
+                            <FiArrowLeft/>
                         </span>
-                        <span>R$ 366,67</span>
-                        <span className="trashIcon">
-                            <Link to="/"><FaTrash /></Link>
-                        </span>
-                    </li>
+                        <strong>Voltar ao inicio</strong>
+                    </Link>
+                </div>
+            )
+        } else {
+            return (
+                <div className="shop-info">
+                    <ul className="shop-table">
+                        {cart.map( product => (
+                            <li key={product.id} id={product.id}>
+                                <img src={product.image.url} alt="Produto"/>
+        
+                                <h4 className="title">{product.title}</h4>
+        
+                                <p className="value">{
+                                    Intl.NumberFormat('pt-BR', {
+                                        style: 'currency',
+                                        currency: 'BRL'
+                                    }).format(product.price)
+                                }</p>
 
-                    <li>
-                        <img src={imgExample} alt="Item do Carrinho"/>
-                        <span className="productName">Mouse Gamer Motospeed V40 FMSMS0004PTOM 4000 DPI RGB Preto</span>
-                        <span>
-                            <Link to="/"><FaMinus/></Link>
-                            <span>1</span>
-                            <Link to="/"><FaPlus /></Link>
-                        </span>
-                        <span>R$ 366,67</span>
-                        <span className="trashIcon">
-                            <Link to="/"><FaTrash /></Link>
-                        </span>
-                    </li>
-
-                    <li>
-                        <img src={imgExample} alt="Item do Carrinho"/>
-                        <span className="productName">Mouse Gamer Motospeed V40 FMSMS0004PTOM 4000 DPI RGB Preto</span>
-                        <span>
-                            <Link to="/"><FaMinus/></Link>
-                            <span>1</span>
-                            <Link to="/"><FaPlus /></Link>
-                        </span>
-                        <span>R$ 366,67</span>
-                        <span className="trashIcon">
-                            <Link to="/"><FaTrash /></Link>
-                        </span>
-                    </li>
-
-                    <li>
-                        <img src={imgExample} alt="Item do Carrinho"/>
-                        <span className="productName">Mouse Gamer Motospeed V40 FMSMS0004PTOM 4000 DPI RGB Preto</span>
-                        <span>
-                            <Link to="/"><FaMinus/></Link>
-                            <span>1</span>
-                            <Link to="/"><FaPlus /></Link>
-                        </span>
-                        <span>R$ 366,67</span>
-                        <span className="trashIcon">
-                            <Link to="/"><FaTrash /></Link>
-                        </span>
-                    </li>
-                </ul>
+                                <div className="quantity">
+                                    <FaMinus />
+                                    <p>1</p>
+                                    <FaPlus />
+                                </div>
+                            
+                                <FaTrash size={14} className="trashIcon" onClick={e => removeProduct(e, product.id)}/>
+                            </li>
+                        ))}
+                    </ul>
 
                 <ul className="price-table">
                     <li>Subtotal <span className="price">R$ 366,67</span></li>
@@ -88,16 +86,36 @@ function Cart() {
                 </ul>
 
                 <ul className="shipping">
-                    <li><span className="truckIcon"><FaTruck /></span> <span>Calcular Frete</span> <input type="text" placeholder="CEP"  maxlength="8" autocomplete="off"/> <button type="submit">Calcular</button></li>
+                    <li>
+                        <FaTruck className="truckIcon" />
+                        <p>Calcular Frete</p>
+                        <input type="text" placeholder="CEP"  maxLength="8" autoComplete="off"/>
+                        <button type="submit">Calcular</button>
+                    </li>
 
                 </ul>
 
                 <ul className="finalize">
-                    <li><button><span className="arrowRight"><FaArrowRight /></span> Finalizar Compra</button></li>
+                    <li>
+                        <button>
+                            <FaArrowRight size={24} className="arrowRight" />
+                            Finalizar Compra
+                        </button>
+                    </li>
                 </ul>
             </div>
+            )
+        }
+    }
+
+    return (
+        <div className="cart-page">
+            <div className="cart-shop">
+                <h1><FaShoppingCart /> Carrinho de compras</h1>
+            </div>
+            {renderCart()}
         </div>
-    );
+    )
 }
 
 export default Cart;

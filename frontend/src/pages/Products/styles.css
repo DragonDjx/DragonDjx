@@ -152,7 +152,7 @@ button.buyButton:hover {
 }
 
 .shipping span:nth-child(2),
-input {
+.shipping input {
     font-weight: 500;
     vertical-align: super;
     padding: 0px 5px;

@@ -1,23 +1,31 @@
-import React, { useState } from 'react';
-import {FaCheck, FaCreditCard, FaBarcode, FaTruck, FaShoppingCart} from 'react-icons/fa'
-import {BsAward} from 'react-icons/bs'
-import imgExample from '../../assets/linha-gamer.jpg';
-import imgExample2 from '../../assets/linha-home.jpg';
-import imgExample3 from '../../assets/linha-monte.jpg';
+import React, { useState, useEffect } from 'react';
+import {FaCheck, FaCreditCard, FaBarcode, FaTruck, FaShoppingCart} from 'react-icons/fa';
+import {BsAward} from 'react-icons/bs';
+
+import api from '../../services/api';
 
 import './styles.css';
 
-function Products() {
-    
-    const [imageSlide, setImageSlide] = useState([])
+function Products(props) {
+    const productName = props.match.params.productName;
+    const [product, setProduct] = useState('');
+    const [images, setImages] = useState([]);
 
+    useEffect( () => {
+        if (product === '') {
+            api.post('/products/info', { title: productName }).then(response => {
+                setProduct(response.data);
+                setImages(response.data.images);
+            });
+        };
+    });
+
+    const [imageSlide, setImageSlide] = useState([]);
 
     function setTheImageSlide(event) {
+        setImageSlide(event.target.src);
+    };
 
-        setImageSlide(event.target.src)
-    }
-
-   
     return(
         <div className="products-page">
             <div className="product-build">
@@ -26,28 +34,71 @@ function Products() {
 
                     <div className="slide-show">
                         <ul>
-                            <li><img src={imgExample} alt="" onClick={e => setTheImageSlide(e)} /></li>
-                            <li><img src={imgExample2} alt="" onClick={e => setTheImageSlide(e)} /></li>
-                            <li><img src={imgExample3} alt="" onClick={e => setTheImageSlide(e)} /></li>
-                            <li><img src={imgExample} alt="" onClick={e => setTheImageSlide(e)} /></li>
+                            {images.slice(0, 4).map(image => (
+                                <li key={image.id}>
+                                    <img src={image.url} alt="" onClick={e => setTheImageSlide(e)} />
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
                     <div className="showProduct">
                         <ul>
                             {/* Não tira o ID "myImage" */}
-                            <li className="zoom" ><img id="myImage" src={imageSlide != null && imageSlide.length !== 0 ? imageSlide : imgExample} alt="" /></li>
+                            <li className="zoom" ><img id="myImage" src={imageSlide != null && imageSlide.length !== 0 ? imageSlide : images.slice(0, 1).map(image => image.url)} alt="" /></li>
 
                         </ul>
                     </div>
  
                     <div className="productDescription">
                         <ul>
-                            <li className="productTitle infoProduct">GABINETE GAMER COUGAR MX410-T VIDRO TEMP, 385VM60.0003</li>
+                            <li className="productTitle infoProduct">{ product.title }</li>
 
-                            <li className="productDisp infoProduct"><span className="iconClass"><FaCheck /></span>Produto Disponível</li>
-                            <li className="productPrice infoProduct"><span className="iconClass"><FaCreditCard /></span><span className="price">R$340,80</span> <br /><span className="price">10x de R$34,08</span>sem juros no cartão <button className="buyButton"><span className="arrowRight"><FaShoppingCart /></span>Comprar</button> </li>
-                            <li className="productPriceCard infoProduct"><span className="iconClass"><FaBarcode /></span>à vista R$299,90</li>
+                            <li className="productDisp infoProduct">
+                                <span className="iconClass">
+                                    <FaCheck />
+                                </span>
+                                Produto Disponível
+                            </li>
+
+                            <li className="productPrice infoProduct">
+                                <span className="iconClass">
+                                    <FaCreditCard />
+                                </span>
+                                <span className="price">{
+                                    Intl.NumberFormat('pt-BR', {
+                                        style: 'currency',
+                                        currency: 'BRL'
+                                    }).format(product.parceled)
+                                } no cartão
+                                </span> <br />
+                                <span className="price">
+                                    12x de {
+                                        Intl.NumberFormat('pt-BR', {
+                                            style: 'currency',
+                                            currency: 'BRL'
+                                        }).format(product.price)
+                                    }
+                                </span>
+                                sem juros no cartão
+                                <button className="buyButton">
+                                    <span className="arrowRight">
+                                        <FaShoppingCart />
+                                    </span>
+                                    Comprar
+                                </button>
+                            </li>
+                            
+                            <li className="productPriceCard infoProduct">
+                                <span className="iconClass">
+                                    <FaBarcode />
+                                </span>{
+                                    Intl.NumberFormat('pt-BR', {
+                                        style: 'currency',
+                                        currency: 'BRL'
+                                    }).format(product.price)
+                                } à vista
+                            </li>
                         </ul>
 
                         <ul>

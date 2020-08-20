@@ -55,7 +55,7 @@ header {
     transition: transform 0.2s;
 }
 
-.header-list p {
+.header-list a {
     color: rgba(255, 255, 255, 0.8);
 
     height: 100%;
@@ -69,7 +69,7 @@ header {
     transform: scale(1.05);
 }
 
-.header-list:hover p {
+.header-list:hover a {
     color: #fff;
 }
 
@@ -121,12 +121,12 @@ header {
     background: #fffffff5;
 }
 
-#menu p svg {
+#menu a svg {
     margin: 0;
     margin-left: 4px;
 }
 
-#menu p svg.svg-menu {
+#menu a svg.svg-menu {
     height: 0;
     width: 0;
 

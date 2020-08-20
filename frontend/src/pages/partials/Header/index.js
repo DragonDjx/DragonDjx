@@ -20,16 +20,22 @@ export default function Header() {
     }
 
     function listCart() {
-        if (cart != null && cart.length !== 0) {return cart.map(product => (
-            <li key={product.id} id={product.id}>
-                <img src={product.image.url} alt="Produto"/>
+        if (cart != null && cart.length !== 0) {
+            return cart.map(product => (
+                <li key={product.id} id={product.id}>
+                    <img src={product.image.url} alt="Produto"/>
 
-                <h4 className="title">{product.title}</h4>
+                    <h4 className="title">{product.title}</h4>
 
-                <p className="value">{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.price)}</p>
-                
-                <FaTrash size={14} onClick={e => {e.preventDefault(); removeProduct(product.id);}}/>
-            </li>
+                    <p className="value">{
+                        Intl.NumberFormat('pt-BR', {
+                            style: 'currency',
+                            currency: 'BRL'
+                        }).format(product.price)
+                    }</p>
+                    
+                    <FaTrash size={14} onClick={e => removeProduct(e, product.id)}/>
+                </li>
         ))} else {
             return (
                 <li id="emptyCart">
@@ -39,12 +45,14 @@ export default function Header() {
         };
     };
 
-    function removeProduct(id) {
-        const item = document.getElementById(id);
+    function removeProduct(e, productId) {
+        e.preventDefault();
+        
+        const item = document.getElementById(productId);
         item.classList.add("fade-out");
 
         setTimeout(function() {
-            const newCart = cart.filter(product => product.id !== id);
+            const newCart = cart.filter(product => product.id !== productId);
 
             localStorage.setItem('cart', JSON.stringify(newCart));
             setCart(newCart);
@@ -71,11 +79,11 @@ export default function Header() {
             </Link>
 
             <div id="menu" className="header-list">
-                <p id="products" onClick={ e => getPage(e, '/produtos') }>
+                <Link to="produtos" id="products">
                     Categorias
                     <FaAngleDown size={20} className="svg-angle-down"/>
                     <FiMenu className="svg-menu"/>
-                </p>
+                </Link>
 
                 <ul className="fade">
                     <li onClick={ e => getPage(e, '/produtos/teste-1') }>
@@ -104,10 +112,10 @@ export default function Header() {
             </form>
 
             <div id="user" className="header-list">
-                <p onClick={ e => getPage(e, 'dashboard')}>
+                <Link to="/dashboard">
                     <FaUser size={14} />
                     Minha Conta
-                </p>
+                </Link>
 
                 <ul className="fade">
                     <li onClick={ e => getPage(e, 'registrar')}>
@@ -122,10 +130,10 @@ export default function Header() {
             </div>
 
             <div id="cart" className="header-list" onMouseOver={getCart}>
-                <p onClick={ e => getPage(e, 'carrinho') }>
+                <Link to="/cart">
                     <FaShoppingCart size={14} />
                     Carrinho
-                </p>
+                </Link>
 
                 <ul className="fade">
                     {listCart()}
