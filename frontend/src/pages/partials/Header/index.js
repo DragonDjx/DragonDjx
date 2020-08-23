@@ -55,81 +55,80 @@ export default function Header() {
         e.preventDefault();
 
         history.push(`/produtos?search=${search}`);
-    }
-
-    function getPage(e, route) {
-        e.preventDefault();
-
-        history.push(route);
     };
 
     return (
         <header>
-            <Link to="/" id="home-button" onClick={ e => getPage(e, '/') }>
+            <Link to="/" id="home-button">
                 <img src={logo} alt="DragonDjx" />
                 DragonDjx
             </Link>
 
             <div id="menu" className="header-list">
-                <p id="products" onClick={ e => getPage(e, '/produtos') }>
+                <Link to="/produtos" id="products" className="header-list-title">
                     Categorias
                     <FaAngleDown size={20} className="svg-angle-down"/>
                     <FiMenu className="svg-menu"/>
-                </p>
+                </Link>
 
                 <ul className="fade">
-                    <li className="hover-me" onClick={ e => getPage(e, '/produtos/teste-1') }>
-                        <Link to="/" className="linkClass">Promoções</Link>
+                    <li className="hover-me">
+                        <Link to="/promocoes" className="linkClass">Promoções</Link>
                     </li>
 
-                    <li className="hover-me" onClick={ e => getPage(e, '/produtos/teste-1') }>
-                        <Link to="/" className="linkClass">Gabinetes</Link>
+                    <li className="hover-me">
+                        <Link to="/gabinetes" className="linkClass">Gabinetes</Link>
                     </li>
 
-                    <li className="hover-me" onClick={ e => getPage(e, '/produtos/teste-1') }>
-                        Pc gamer
-                        <FaArrowAltCircleRight size={12} color="333"/>
+                    <li className="hover-me">
+                        <Link to="/pc-gamer" className="linkClass">
+                            Pc gamer
+                            <FaArrowAltCircleRight className="menu-arrow-right" />
+                        </Link>
 
                         <div className="menu-2">
                             <ul>
-                                <li><Link to="/" className="linkClass">Linha Home</Link></li>
-                                <li><Link to="/" className="linkClass">Linha Gamer</Link></li>
-                                <li><Link to="/" className="linkClass">Monte seu PC</Link></li>                  
-                                
+                                <li><Link to="/pc-gamer/linha-home" className="linkClass">Linha Home</Link></li>
+                                <li><Link to="/pc-gamer/linha-gamer" className="linkClass">Linha Gamer</Link></li>
+                                <li><Link to="/pc-gamer/monte-seu-pc" className="linkClass">Monte seu PC</Link></li>
                             </ul>
                         </div>
                     </li>
 
-                    <li className="hover-me" onClick={ e => getPage(e, '/produtos/teste-2') }>
-                        Hardware
-                        <FaArrowAltCircleRight size={12} color="333"/>
+                    <li className="hover-me">
+                        <Link to="/hardware" className="linkClass">
+                            Hardware
+                            <FaArrowAltCircleRight className="menu-arrow-right" />
+                        </Link>
 
                         <div className="menu-2">
                             <ul>
-                                <li><Link to="/" className="linkClass">Placa de Vídeo</Link></li>
-                                <li><Link to="/" className="linkClass">Processador</Link></li>
-                                <li><Link to="/" className="linkClass">Memórias</Link></li>
-                                <li><Link to="/" className="linkClass">Hard Disk</Link></li>
-                                <li><Link to="/" className="linkClass">Fontes</Link></li>
-                                <li><Link to="/" className="linkClass">Placa-mãe</Link></li>
-                                <li className="finalLink"><Link to="/" className="finalLink">Ver todos</Link></li>
+                                <li><Link to="/hardware/placa-de-video" className="linkClass">Placa de Vídeo</Link></li>
+                                <li><Link to="/hardware/processador" className="linkClass">Processador</Link></li>
+                                <li><Link to="/hardware/memoria-ram" className="linkClass">Memórias</Link></li>
+                                <li><Link to="/hardware/hard-disk" className="linkClass">Hard Disk</Link></li>
+                                <li><Link to="/hardware/fontes" className="linkClass">Fontes</Link></li>
+                                <li><Link to="/hardware/placa-mae" className="linkClass">Placa-mãe</Link></li>
+                                <li className="finalLink"><Link to="/hardware" className="finalLink">Ver todos</Link></li>
                             </ul>
                         </div>
 
                     </li>
-                    <li className="hover-me" onClick={ e => getPage(e, '/produtos/teste-3') }>
-                        Periféricos
-                        <FaArrowAltCircleRight size={12} color="333"/>
+                    <li className="hover-me">
+                        <Link to="/perifericos" className="linkClass">
+                            Periféricos
+                            <FaArrowAltCircleRight className="menu-arrow-right" />
+                        </Link>
 
                         <div className="menu-2">
                             <ul>
-                                <li><Link to="/" className="linkClass">Teclado</Link></li>
-                                <li><Link to="/" className="linkClass">Mouse</Link></li>
-                                <li><Link to="/" className="linkClass">Mouse Pad</Link></li>
-                                <li><Link to="/" className="linkClass">Fones</Link></li>
-                                <li><Link to="/" className="linkClass">Web Cam</Link></li>
+                                <li><Link to="/perifericos/teclado" className="linkClass">Teclado</Link></li>
+                                <li><Link to="/perifericos/mouse" className="linkClass">Mouse</Link></li>
+                                <li><Link to="/perifericos/mousepad" className="linkClass">Mouse Pad</Link></li>
+                                <li><Link to="/perifericos/fones" className="linkClass">Fones</Link></li>
+                                <li><Link to="/perifericos/web-cam" className="linkClass">Web Cam</Link></li>
 
-                                <li className="finalLink"><Link to="/" className="finalLink">Ver todos</Link></li>
+                                <li className="finalLink"><Link to="/perifericos" className="finalLink">Ver todos</Link></li>
                             </ul>
                         </div>
                     </li>
@@ -147,28 +146,32 @@ export default function Header() {
             </form>
 
             <div id="user" className="header-list">
-                <p onClick={ e => getPage(e, 'dashboard')}>
+                <Link to="/dashboard" className="header-list-title">
                     <FaUser size={14} />
                     Minha Conta
-                </p>
+                </Link>
 
                 <ul className="fade">
-                    <li onClick={ e => getPage(e, 'registrar')}>
-                        <FaUserPlus size={12} color="333"/>
-                        Registrar
+                    <li>
+                        <Link to="/register" className="linkClass">
+                            <FaUserPlus size={12} color="333"/>
+                            Registrar
+                        </Link>
                     </li>
-                    <li onClick={ e => getPage(e, 'login')}>
-                        <FaUserLock size={12} color="333"/>
-                        Entrar
+                    <li>
+                        <Link to="/login" className="linkClass">
+                            <FaUserLock size={12} color="333"/>
+                            Entrar
+                        </Link>
                     </li>
                 </ul>
             </div>
 
             <div id="cart" className="header-list" onMouseOver={getCart}>
-                <p onClick={ e => getPage(e, 'carrinho') }>
+                <Link to="/cart" className="header-list-title">
                     <FaShoppingCart size={14} />
                     Carrinho
-                </p>
+                </Link>
 
                 <ul className="fade">
                     {listCart()}

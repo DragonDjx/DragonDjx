@@ -22,7 +22,7 @@ export default function Routes() {
         <Route path="/" exact component={Home} />
         <Route path="/cart" component={Cart}/>
         <Route path="/login" component={Login}/>
-        <Route path="/registrar" component={Register}/>
+        <Route path="/register" component={Register}/>
         <Route path="/produtos/:productName" component={Products} />
         <Route component={NotFoundPage} />
       </Switch>
