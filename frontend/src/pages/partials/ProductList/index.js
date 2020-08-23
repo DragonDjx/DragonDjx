@@ -9,7 +9,6 @@ export default function ProductList(products) {
     const history = useHistory();
     
     function productDetails(e, product) {
-        console.log(e.type)
         e.preventDefault();
 
         const productName = product.title;

@@ -55,7 +55,7 @@ header {
     transition: transform 0.2s;
 }
 
-.header-list a {
+.header-list p {
     color: rgba(255, 255, 255, 0.8);
 
     height: 100%;
@@ -69,7 +69,7 @@ header {
     transform: scale(1.05);
 }
 
-.header-list:hover a {
+.header-list:hover p {
     color: #fff;
 }
 
@@ -99,6 +99,49 @@ header {
     border-top: 1px solid #ddd;
 }
 
+.menu-2 {
+    display: none;
+
+}
+
+.linkClass {
+    color: #222;
+}
+
+.finalLink {
+    width: 100%;
+    text-align:center;
+    font-weight: 500;
+    background-color: rgb(189, 51, 253) !important;
+    color: #fff;
+}
+
+.finalLink:hover {
+    width: 100%;
+    text-align:center;
+    font-weight: 500;
+    background-color: #222 !important;
+    color: #fff;
+}
+
+.hover-me:hover .menu-2 {
+    position: absolute;
+    display: block;
+    margin-top: 32px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-left: 173px;
+    height: 100%;
+}
+
+
+/* .hover-me:hover #menu {
+    position: absolute;
+    display: inline-block;
+    margin-top: 54px;
+    margin-left: 173px;
+} */
+
 .header-list ul li {
     background: #f0f0f5f5;
 
@@ -117,16 +160,17 @@ header {
     border: 1px solid #ddd;
 }
 
-.header-list ul li:hover {
-    background: #fffffff5;
+.header-list ul li:hover, .linkClass:hover {
+    background-color: #fff;
+    color: #222;
 }
 
-#menu a svg {
+#menu p svg {
     margin: 0;
     margin-left: 4px;
 }
 
-#menu a svg.svg-menu {
+#menu p svg.svg-menu {
     height: 0;
     width: 0;
 

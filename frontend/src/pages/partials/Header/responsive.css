@@ -19,6 +19,14 @@
         padding-left: 16px;
     }
 
+    .hover-me:hover .menu-2 {
+        position: absolute;
+        display: block;
+        margin-top: 25px;
+        margin-left: 162px;
+        height: 100%;
+    }
+
     #search {
         max-width: 300px;
     }
@@ -78,7 +86,17 @@
         max-width: 100px;
     }
 
-    .header-list a {
+    .hover-me:hover .menu-2 {
+        position: absolute;
+        display: block;
+        margin-top: 12px;
+        margin-left: 134px;
+        height: 100%;
+        padding: 8px;
+        font-size: 10px;
+    }
+
+    .header-list p {
         font-size: 12px;
     }
 
@@ -87,7 +105,7 @@
         width: 10px;
     }
 
-    .header-list a svg.svg-angle-down {
+    .header-list p svg.svg-angle-down {
         height: 16px;
         width: 16px;
     }
@@ -149,7 +167,7 @@
         max-width: 90px;
     }
 
-    .header-list a {
+    .header-list p {
         font-size: 10px;
     }
 
@@ -179,7 +197,7 @@
         font-size: 8px;
     }
 
-    #cart ul li a.value {
+    #cart ul li p.value {
         font-size: 10px;
     }
 }
@@ -211,25 +229,35 @@
         font-size: 8px;
     }
 
+    .hover-me:hover .menu-2 {
+        position: absolute;
+        display: block;
+        margin-top: 12px;
+        margin-left: 108px;
+        height: 100%;
+        padding: 5px;
+        font-size: 6px;
+    }
+
     .header-list {
         max-width: 36px;
     }
 
-    .header-list a {
+    .header-list p {
         font-size: 0;
     }
 
-    .header-list a svg {
+    .header-list p svg {
         height: 16px;
         width: 16px;
     }
 
-    .header-list a svg.svg-angle-down {
+    .header-list p svg.svg-angle-down {
         height: 0;
         width: 0;
     }
 
-    #menu a svg.svg-menu {
+    #menu p svg.svg-menu {
         height: 20px;
         width: 20px;
     }

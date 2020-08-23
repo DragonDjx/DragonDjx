@@ -37,11 +37,15 @@
 
 .slide-show {
     grid-area: slide-show;
+
+    height: 400px;
+    display: flex;
+    justify-content: center;
 }
 
 .slide-show ul li img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
 }
 
 .slide-show ul li img:hover {
@@ -51,11 +55,31 @@
 
 .showProduct {
     grid-area: showProduct;
+
+    height: 400px;
+    display: flex;
+    justify-content: center;
 }
 
 .showProduct img {
-    width: 250px;
-    height: 250px;
+    width: 280px;
+    height: 280px;
+}
+
+.img-zoom-lens {
+    position: absolute;
+    /*set the size of the lens:*/
+    width: 120px;
+    height: 120px;
+}
+
+.img-zoom-result {
+    position: absolute;
+
+    border: 1px solid #d4d4d4;
+    /*set the size of the result div:*/
+    height: 300px;
+    width: 300px;
 }
 
 .zoom {
@@ -75,15 +99,33 @@
     grid-area: productDescription;
 }
 
+.productPrice h1,
+.productPrice h2,
+.productPrice h3,
+.productPrice h4 {
+    margin: 12px 0;
+}
+
+.infoProduct h1,
+.infoProduct h2,
+.infoProduct h3,
+.infoProduct h4 {
+    font-weight: 400;
+    
+    display: flex;
+    align-items: center;
+}
+
+.infoProduct p {
+    margin-right: 4px;
+}
+
 .price {
     color: rgb(8, 172, 248);
-    padding-right: 5px;
-    padding-left: 0px;
 }
 .iconClass {
     color: rgb(189, 51, 253);
-    padding-right: 7px;
-    font-size: 25px;
+    width: 28px;
     vertical-align: middle;
 }
 
@@ -96,23 +138,34 @@
 }
 
 .productDisp {
-    font-size: 21px;
-    font-weight: 400;
+    font-size: 14px;
     border-bottom: 1px solid gray;
-    padding: 20px 0px;
+    padding: 16px 0;
     text-align: left;
-
 }
 
-button.buyButton {
+.productDisp svg {
+    width: 24px;
+}
+
+.buyButton {
+    display: flex;
+    align-items: center;
+
+    padding: 8px;
+}
+
+.buyButton button {
     
     width: 150px;
     height: 45px;
-    padding: 9px 5px;
-    margin-left: 10px;
     border-radius: 8px;
     background-color: rgb(189, 51, 253);
     color: whitesmoke;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 button.buyButton:hover {
@@ -124,19 +177,19 @@ button.buyButton:hover {
     padding: 0px 5px 0px 0px;
     margin-right: 0px;
     color: rgb(8, 172, 248);
+    width: 24px;
 }
 
 .productPrice {
-    padding: 10px 0px;
+    padding: 8px 0px;
     font-size: 21px;
     font-weight: 400;
-    padding-bottom: 20px;
     text-align: left;
 }
 
 .productPriceCard {
     color: rgb(8, 172, 248);
-    padding: 5px 0px;
+    padding: 4px 0px 8px;
     font-size: 21px;
     font-weight: 400;
     border-bottom: 1px solid gray;
@@ -144,14 +197,22 @@ button.buyButton:hover {
 }
 
 .shipping {
-    padding: 0px 0px;
+    padding: 0;
     font-size: 25px;
     font-weight: 400;
-    padding-bottom: 20px;
+    margin-bottom: 12px;
     text-align: left;
+
+    margin-top: 28px;
 }
 
-.shipping span:nth-child(2),
+.shipping h4 {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+}
+
+.shipping p,
 .shipping input {
     font-weight: 500;
     vertical-align: super;
@@ -194,8 +255,11 @@ button.buyButton:hover {
 
 .truckIcon {
     color: rgb(189, 51, 253);
-    font-size: 26px;
-    margin: 0px 0px 0px 0px;
+    width: 26px;
+}
+
+.hide {
+    display: none;
 }
 
 @media (max-width: 920px) {
