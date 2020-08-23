@@ -1,0 +1,295 @@
+@media screen and (max-width: 800px ) {
+    header {
+        height: 52px;
+    }
+
+    #home-button {
+        font-size: 24px;
+    }
+
+    #home-button img {
+        height: 30px;
+    }
+
+    #menu:hover ul {
+        width: 180px;
+    }
+
+    #menu ul li {
+        padding-left: 16px;
+    }
+
+    .hover-me:hover .menu-2 {
+        position: absolute;
+        display: block;
+        margin-top: 25px;
+        margin-left: 162px;
+        height: 100%;
+    }
+
+    #search {
+        max-width: 300px;
+    }
+
+    #search button svg {
+        height: 10px;
+        width: 10px;
+    }
+
+    #cart:hover ul {
+        width: 320px;
+    }
+
+    #cart ul li img {
+        max-height: 48px;
+        max-width: 48px;
+    }
+
+    #cart ul li h4.title {
+        max-width: 100px;
+    }
+
+    #cart ul li p.value {
+        font-size: 12px;
+    }
+
+    #cart ul li svg {
+        height: 12px;
+        width: 12px;
+    }
+
+    #cart ul li#emptyCart {
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 760px ) {
+    header {
+        height: 48px;
+    }
+
+    #home-button img {
+        height: 28px;
+    }
+
+    #menu:hover ul {
+        width: 160px;
+    }
+
+    #menu ul li {
+        padding-right: 8px;
+
+        font-size: 10px;
+    }
+
+    .header-list {
+        max-width: 100px;
+    }
+
+    .hover-me:hover .menu-2 {
+        position: absolute;
+        display: block;
+        margin-top: 12px;
+        margin-left: 134px;
+        height: 100%;
+        padding: 8px;
+        font-size: 10px;
+    }
+
+    .header-list p {
+        font-size: 12px;
+    }
+
+    .header-list svg {
+        height: 10px;
+        width: 10px;
+    }
+
+    .header-list p svg.svg-angle-down {
+        height: 16px;
+        width: 16px;
+    }
+
+    #user:hover ul {
+        width: 100px;
+    }
+
+    #user:hover ul li {
+        padding-left: 16px;
+
+        font-size: 10px;
+    }
+
+    #search {
+        max-width: 240px;
+    }
+
+    #search input {
+        font-size: 12px;
+
+        padding: 4px 8px;
+    }
+
+    #search button svg {
+        height: 8px;
+        width: 8px;
+    }
+
+    #cart:hover ul {
+        width: 300px;
+    }
+
+    #cart ul li {
+        padding: 8px 12px;
+    }
+
+    #cart ul li#emptyCart {
+        height: 40px;
+
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 600px ) {
+    #home-button {
+        font-size: 20px;
+    }
+
+    #home-button img {
+        height: 24px;
+    }
+
+    #menu ul li {
+        padding-right: 4px;
+    }
+
+    .header-list {
+        max-width: 90px;
+    }
+
+    .header-list p {
+        font-size: 10px;
+    }
+
+    #search input {
+        height: 28px;
+
+        font-size: 10px;
+    }
+
+    #search button {
+        height: 28px;
+        width: 28px;
+    }
+
+    #cart:hover ul {
+        width: 280px;
+    }
+
+    #cart ul li img {
+        max-height: 40px;
+        max-width: 40px;
+    }
+
+    #cart ul li h4.title {
+        max-width: 80px;
+
+        font-size: 8px;
+    }
+
+    #cart ul li p.value {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 498px ) {
+    header {
+        height: 40px;
+    }
+
+    #home-button {
+        margin-right: 0;
+
+        font-size: 14px;
+    }
+
+    #home-button img {
+        height: 20px;
+    }
+
+    #menu:hover ul {
+        width: 140px;
+
+        padding-left: 8px;
+    }
+
+    #menu ul li {
+        padding-left: 8px;
+
+        font-size: 8px;
+    }
+
+    .hover-me:hover .menu-2 {
+        position: absolute;
+        display: block;
+        margin-top: 12px;
+        margin-left: 108px;
+        height: 100%;
+        padding: 5px;
+        font-size: 6px;
+    }
+
+    .header-list {
+        max-width: 36px;
+    }
+
+    .header-list p {
+        font-size: 0;
+    }
+
+    .header-list p svg {
+        height: 16px;
+        width: 16px;
+    }
+
+    .header-list p svg.svg-angle-down {
+        height: 0;
+        width: 0;
+    }
+
+    #menu p svg.svg-menu {
+        height: 20px;
+        width: 20px;
+    }
+
+    #search {
+        max-width: 120px;
+    }
+
+    #search input {
+        height: 24px;
+
+        padding: 4px;
+
+        font-size: 8px;
+    }
+
+    #search button {
+        height: 24px;
+        width: 24px;
+    }
+
+    #cart:hover ul {
+        width: 240px;
+    }
+
+    #cart ul li {
+        padding: 4px 8px;
+    }
+
+    #cart ul li#emptyCart {
+        height: 36px;
+
+        font-size: 8px;
+    }
+}
