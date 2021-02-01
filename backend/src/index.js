@@ -13,4 +13,4 @@ app.use(
     express.static(path.resolve(__dirname, '..', 'tmp', 'uploads'))
 );
 
-app.listen(process.env.PORT || 81);
+app.listen(process.env.PORT || 80);
