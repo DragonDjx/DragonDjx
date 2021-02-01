@@ -6,7 +6,6 @@ exports.up = function(knex) {
         table.string('name').notNullable();
         table.integer('size').notNullable();
         table.string('key').notNullable();
-        table.string('url').notNullable();
 
         table.string('product_id').notNullable();
 

@@ -5,13 +5,10 @@ module.exports = {
         const product_id = request.body.id;
         const { originalname: name, size, key } = request.file;
 
-        const url = `http://dragondjx.tk/files/${key}`
-
         await connection('images').insert({
             name,
             size,
             key,
-            url,
 
             product_id
         });
@@ -26,6 +23,8 @@ module.exports = {
             .where('product_id', product_id)
             .first()
             .select('*');
+        
+        image.url = `http://${request.headers.host}/files/${image.key}`;
 
         return response.json(image);
     },
@@ -36,6 +35,10 @@ module.exports = {
         const images = await connection('images')
             .where('product_id', product_id)
             .select('*');
+        
+        for (image of images) {
+            image.url = `http://${request.headers.host}/files/${image.key}`;
+        };
 
         return response.json(images);
     }

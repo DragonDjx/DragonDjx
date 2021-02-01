@@ -9,7 +9,12 @@ module.exports = {
             product.image = await connection('images')
                 .where('product_id', product.id)
                 .first()
-                .select('*');
+                .select('*')
+                .then(image => {
+                    image.url = `http://${request.headers.host}/files/${image.key}`;
+                    return image
+                });
+
         }
 
         return response.json(products);
@@ -53,7 +58,11 @@ module.exports = {
 
         product.images = await connection('images')
         .where('product_id', product.id)
-        .select('*');
+        .select('*')
+        .then(image => {
+            image.url = `http://${request.headers.host}/files/${image.key}`;
+            return image
+        });
 
         return response.json(product);
     },
@@ -69,7 +78,11 @@ module.exports = {
             product.image = await connection('images')
                 .where('product_id', product.id)
                 .first()
-                .select('*');
+                .select('*')
+                .then(image => {
+                    image.url = `http://${request.headers.host}/files/${image.key}`;
+                    return image
+                });
         }
 
         return response.json(products);
